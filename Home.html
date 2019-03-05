@@ -23,10 +23,14 @@
         padding-left:15px;
         text-align: center; 
     }
+    p {
+        font-size: 18px;
+        padding:15px; 
+    }
 
     .main-container {
         display: grid;
-        background-color: aquamarine;
+        background-color: rgb(79, 112, 101);
         width: 100%;
         min-height: 100%;
         grid-template-rows: 3fr 3fr 3fr 3fr 3fr;
@@ -38,7 +42,10 @@
         background-color: gold;
         height: 150px;
         margin-bottom: 20px;
-
+    }
+    .header > img {
+        width: 100%;
+        height: 100%;
     }
 
     .r3 {
@@ -47,8 +54,9 @@
         width: 100%;
         margin-top: 20px;
         height: 20px;
-        background-color: brown;
+        background-color: rgb(83, 8, 8);
         align-self: center;
+        color: white;
 
     }
 
@@ -62,71 +70,75 @@
     .cybersecurity,
     .home-info,
     .web-dev {
-        width: 90%;
-        margin-left: 5%;
+        width: 80%;
+        margin-left: 10%;
         height: 200px;
+        background-color: rgb(153, 184, 212);
 
     }
 
     .network {
-        background-color: bisque;
+        /* background-color: bisque; */
     }
 
     .database {
-        background-color: chartreuse;
+        /* background-color: chartreuse; */
     }
 
     .cybersecurity {
-        background-color: cyan;
+        /* background-color: cyan; */
     }
 
     .web-dev {
-        background-color: darkorange;
-    }
-    .home-info > img {
-        width: 200px;
-        height: 150px;
-        padding: 15px;
-    }
-    .home {
-        float: left;
-    }
-    .home-info > img > p {
-        font-size: 12px;
-        color: green;
-        padding: 15px;
-        margin: 15px;
+        /* background-color: darkorange; */
     }
     .network > p  {
         padding: 15px;
     }
-    .net {
+    .net, .cyber {
+        width: 200px;
+        height: 150px;
+        padding: 15px;
+        float: left;
+    }
+    .data, .web {
         width: 200px;
         height: 150px;
         padding: 15px;
         float: right;
     }
+    .btn-sign-in {
+        float: right;
+        width: 100px;
+        height: 35px;
+        background-color: darkblue;
+        color: white;
+        padding-top: -50px;
+        margin-top: -100px;
+        margin-right: 50px;
+    }
 </style>
 <header class="header">
-    header
+    <img src="./img/Lono-name.gif">
+    <button class="btn-sign-in"> Sign Up</button>
 </header>
 
 <body class="main-container">
+    
 
     <div class="home-info">
             <h1>Our Mission</h1>
-        <img class="home" src="./img/lawn.jpeg"> 
         <p>
         Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
         Blackboard may be unavailable to users.
 
         Turnitin services may be unavailable during their scheduled maintenance windows which are the first and third
         Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in advance
-        when the system will be unavailable for scheduled maintenance. <button class="redirect" href= "#">Read more</button>
+        when the system will be unavailable for scheduled maintenance. 
         </p>
     </div>
     <div class="network">
-        <img class="net" src="./img/lawn.jpeg"> 
+        <img class="net" src="./img/lg-net.jpg"> 
         <h1>Networking</h1>
         <p>
         Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
@@ -139,7 +151,7 @@
         
     </div>
     <div class="database">
-            <img class="net" src="./img/lawn.jpeg"> 
+            <img class="data" src="./img/lg-database.jpg"> 
             <h1>Databases</h1>
             <p>
             Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
@@ -151,7 +163,7 @@
             </p>
     </div>
     <div class="cybersecurity">
-            <img class="net" src="./img/lawn.jpeg"> 
+            <img class="cyber" src="./img/lg-cyber.jpg"> 
             <h1>Cybersecurity</h1>
             <p>
             Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
@@ -163,7 +175,7 @@
             </p>
     </div>
     <div class="web-dev">
-            <img class="net" src="./img/lawn.jpeg"> 
+            <img class="web" src="./img/lg-web.jpg"> 
             <h1>Web Development</h1>
             <p>
             Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
