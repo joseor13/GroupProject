@@ -16,14 +16,16 @@
         width: 100vw;
         height: 100vh;
     }
+
     h1 {
         color: black;
-        padding-left:15px;
-        text-align: center; 
+        padding-left: 15px;
+        text-align: center;
     }
+
     p {
         font-size: 18px;
-        padding:15px; 
+        padding: 15px;
     }
 
     .main-container {
@@ -31,12 +33,14 @@
         background-color: rgb(79, 112, 101);
         width: 100%;
         grid-template-rows: 3fr 3fr 3fr 3fr 3fr;
-        grid-gap: .5em; 
+        grid-gap: .5em;
         overflow: right;
     }
-    .main-container > img {
+
+    .main-container>img {
         width: 90%;
     }
+
     .header {
         width: 100%;
         background-color: gold;
@@ -44,7 +48,8 @@
         margin-bottom: 20px;
 
     }
-    .header > img {
+
+    .header>img {
         width: 100%;
         height: 100%;
     }
@@ -63,7 +68,7 @@
 
     .home-info {
         /* background-color: deepskyblue; */
-        
+
     }
 
     .network,
@@ -77,21 +82,27 @@
         background-color: rgb(153, 184, 212);
 
     }
-    .network > p  {
+
+    .network>p {
         padding: 15px;
     }
-    .net, .cyber {
+
+    .net,
+    .cyber {
         width: 200px;
         height: 150px;
         padding: 15px;
         float: left;
     }
-    .data, .web {
+
+    .data,
+    .web {
         width: 200px;
         height: 150px;
         padding: 15px;
         float: right;
     }
+
     .btn-sign-in {
         float: right;
         width: 100px;
@@ -102,6 +113,7 @@
         margin-top: -100px;
         margin-right: 80px;
     }
+
     .btn-sign-up {
         float: right;
         width: 100px;
@@ -112,6 +124,68 @@
         margin-top: -100px;
         margin-right: 200px;
     }
+
+    .topsnap_nav {
+        width: 100%;
+        height: 40px;
+        background-color: #000;
+        position: fixed;
+        top: 0px;
+    }
+
+    .topsnap_nav > ul {
+        float: right;
+    }
+
+    ul li {
+        list-style-type: none;
+    }
+
+
+    li {
+        display: block;
+        position: relative;
+        float: right;
+        transition: 2s;
+        -webkit-transition: 2s;
+        /* Safari */
+        height: 40px;
+        width: 40px;
+        background-color: #CF0;
+    }
+
+
+    li a {
+        width: 0px;
+        background: red;
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        border: 1px solid blue;
+        overflow: hidden;
+        height: 40px;
+        width: 30px;
+        color: blue;
+        z-index: 0;
+        margin-left: 40px;
+    }
+
+    li:hover {
+        width: 400px;
+    }
+
+    li:hover img {
+        float: left
+    }
+
+
+    li img {
+        float: left;
+        position: relative;
+        z-index: 0;
+        background-color: yellow;
+    }
 </style>
 <header class="header">
     <img src="./img/Lono-name.gif">
@@ -120,65 +194,95 @@
 </header>
 
 <body class="main-container">
-    <div class="home-info">
-            <h1>Our Mission</h1>
-        <p>
-        Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
-        Blackboard may be unavailable to users.
+    <div id="topsnap_nav">
 
-        Turnitin services may be unavailable during their scheduled maintenance windows which are the first and third
-        Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in advance
-        when the system will be unavailable for scheduled maintenance. 
+            <ul>
+                <li>
+                    <img src="./img/lawn.jpeg" width="400">
+
+                </li>
+                <li>
+                    <img src="./img/lg-web.jpg" width="400">
+
+                </li>
+            </ul>
+
+       
+
+    </div>
+    <div class="home-info">
+        <h1>Our Mission</h1>
+        <p>
+            Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
+            Blackboard may be unavailable to users.
+
+            Turnitin services may be unavailable during their scheduled maintenance windows which are the first and
+            third
+            Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in
+            advance
+            when the system will be unavailable for scheduled maintenance.
         </p>
     </div>
     <div class="network">
-        <img class="net" src="./img/lg-net.jpg"> 
+        <img class="net" src="./img/lg-net.jpg">
         <h1>Networking</h1>
         <p>
-        Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
-        Blackboard may be unavailable to users.
+            Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
+            Blackboard may be unavailable to users.
 
-        Turnitin services may be unavailable during their scheduled maintenance windows which are the first and third
-        Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in advance
-        when the system will be unavailable for scheduled maintenance. <button class="redirect" href= "#">Read more</button>
+            Turnitin services may be unavailable during their scheduled maintenance windows which are the first and
+            third
+            Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in
+            advance
+            when the system will be unavailable for scheduled maintenance. <button class="redirect" href="#">Read
+                more</button>
         </p>
-        
+
     </div>
     <div class="database">
-            <img class="data" src="./img/lg-database.jpg"> 
-            <h1>Databases</h1>
-            <p>
+        <img class="data" src="./img/lg-database.jpg">
+        <h1>Databases</h1>
+        <p>
             Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
             Blackboard may be unavailable to users.
-    
-            Turnitin services may be unavailable during their scheduled maintenance windows which are the first and third
-            Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in advance
-            when the system will be unavailable for scheduled maintenance. <button class="redirect" href= "#">Read more</button>
-            </p>
+
+            Turnitin services may be unavailable during their scheduled maintenance windows which are the first and
+            third
+            Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in
+            advance
+            when the system will be unavailable for scheduled maintenance. <button class="redirect" href="#">Read
+                more</button>
+        </p>
     </div>
     <div class="cybersecurity">
-            <img class="cyber" src="./img/lg-cyber.jpg"> 
-            <h1>Cybersecurity</h1>
-            <p>
+        <img class="cyber" src="./img/lg-cyber.jpg">
+        <h1>Cybersecurity</h1>
+        <p>
             Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
             Blackboard may be unavailable to users.
-    
-            Turnitin services may be unavailable during their scheduled maintenance windows which are the first and third
-            Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in advance
-            when the system will be unavailable for scheduled maintenance. <button class="redirect" href= "#">Read more</button>
-            </p>
+
+            Turnitin services may be unavailable during their scheduled maintenance windows which are the first and
+            third
+            Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in
+            advance
+            when the system will be unavailable for scheduled maintenance. <button class="redirect" href="#">Read
+                more</button>
+        </p>
     </div>
     <div class="web-dev">
-            <img class="web" src="./img/lg-web.jpg"> 
-            <h1>Web Development</h1>
-            <p>
+        <img class="web" src="./img/lg-web.jpg">
+        <h1>Web Development</h1>
+        <p>
             Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
             Blackboard may be unavailable to users.
-    
-            Turnitin services may be unavailable during their scheduled maintenance windows which are the first and third
-            Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in advance
-            when the system will be unavailable for scheduled maintenance. <button class="redirect" href= "#">Read more</button>
-            </p>
+
+            Turnitin services may be unavailable during their scheduled maintenance windows which are the first and
+            third
+            Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in
+            advance
+            when the system will be unavailable for scheduled maintenance. <button class="redirect" href="#">Read
+                more</button>
+        </p>
     </div>
 
 </body>
