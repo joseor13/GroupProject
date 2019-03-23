@@ -15,8 +15,11 @@
     body {
         width: 100vw;
         height: 100vh;
+        background-color: lightslategray;
     }
-
+    a {
+        text-decoration: none;
+    }
     h1 {
         color: black;
         padding-left: 15px;
@@ -53,7 +56,14 @@
         width: 100%;
         height: 100%;
     }
-
+    .header > a {
+        text-decoration: none;
+        text-align: center;
+        align-self: center;
+        padding-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
     .r3 {
         padding-top: 20px;
         text-align: center;
@@ -106,10 +116,9 @@
     .btn-sign-in {
         float: right;
         width: 100px;
-        height: 35px;
+        height: 30px;
         background-color: darkblue;
         color: white;
-        padding-top: -50px;
         margin-top: -100px;
         margin-right: 80px;
     }
@@ -117,99 +126,24 @@
     .btn-sign-up {
         float: right;
         width: 100px;
-        height: 35px;
+        height: 30px;
         background-color: rgb(94, 17, 7);
         color: white;
-        padding-top: -50px;
         margin-top: -100px;
         margin-right: 200px;
     }
-
-    .topsnap_nav {
-        width: 100%;
-        height: 40px;
-        background-color: #000;
-        position: fixed;
-        top: 0px;
+    .redirect {
+        background-color: lightcyan;
+        color: green;
+        padding: 0px 6px;
     }
 
-    .topsnap_nav > ul {
-        float: right;
-    }
-
-    ul li {
-        list-style-type: none;
-    }
-
-
-    li {
-        display: block;
-        position: relative;
-        float: right;
-        transition: 2s;
-        -webkit-transition: 2s;
-        /* Safari */
-        height: 40px;
-        width: 40px;
-        background-color: #CF0;
-    }
-
-
-    li a {
-        width: 0px;
-        background: red;
-        display: block;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        border: 1px solid blue;
-        overflow: hidden;
-        height: 40px;
-        width: 30px;
-        color: blue;
-        z-index: 0;
-        margin-left: 40px;
-    }
-
-    li:hover {
-        width: 400px;
-    }
-
-    li:hover img {
-        float: left
-    }
-
-
-    li img {
-        float: left;
-        position: relative;
-        z-index: 0;
-        background-color: yellow;
-    }
 </style>
 <header class="header">
     <img src="./img/Lono-name.gif">
-    <button class="btn-sign-in"> Sign in</button>
-    <button class="btn-sign-up"> Sign Up</button>
+    <a href="./login.html" class="btn-sign-in"> Sign in</a>
+    <a href="./Sign-up" class="btn-sign-up"> Sign Up</a>
 </header>
-
-<body class="main-container">
-    <div id="topsnap_nav">
-
-            <ul>
-                <li>
-                    <img src="./img/lawn.jpeg" width="400">
-
-                </li>
-                <li>
-                    <img src="./img/lg-web.jpg" width="400">
-
-                </li>
-            </ul>
-
-       
-
-    </div>
     <div class="home-info">
         <h1>Our Mission</h1>
         <p>
@@ -234,8 +168,8 @@
             third
             Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in
             advance
-            when the system will be unavailable for scheduled maintenance. <button class="redirect" href="#">Read
-                more</button>
+            when the system will be unavailable for scheduled maintenance. <a class="redirect" href="./Network.html">read
+                more</a>
         </p>
 
     </div>
@@ -250,8 +184,8 @@
             third
             Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in
             advance
-            when the system will be unavailable for scheduled maintenance. <button class="redirect" href="#">Read
-                more</button>
+            when the system will be unavailable for scheduled maintenance. <a class="redirect" href="./Database,html">read
+                more</a>
         </p>
     </div>
     <div class="cybersecurity">
@@ -265,8 +199,8 @@
             third
             Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in
             advance
-            when the system will be unavailable for scheduled maintenance. <button class="redirect" href="#">Read
-                more</button>
+            when the system will be unavailable for scheduled maintenance. <a class="redirect" href="./Cybersecurity.html">read
+                more</a>
         </p>
     </div>
     <div class="web-dev">
@@ -280,15 +214,15 @@
             third
             Saturday of each month from 7:00 am until 10:00 am PST. An announcement will appear inside Turnitin in
             advance
-            when the system will be unavailable for scheduled maintenance. <button class="redirect" href="#">Read
-                more</button>
+            when the system will be unavailable for scheduled maintenance. <a class="redirect" href="./web-development.html">read
+                more</a>
         </p>
     </div>
 
 </body>
 <footer class="r3">
     <div>
-        Jose Rosales
+        Google Killer
     </div>
 </footer>
 
