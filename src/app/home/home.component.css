@@ -1,0 +1,118 @@
+*
+a {
+    text-decoration: none;
+    color: white;
+}
+h1 {
+    color: black;
+    padding-left: 15px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    padding: 15px;
+}
+.main-container {
+    display: grid;
+    width: 100vw;
+    max-height: 100vh;
+    grid-template-rows: 3fr 18fr 2fr;
+    grid-gap: .5em;
+}
+.r1 {
+    width: 100%;
+    background-color: gold;
+    height: 150px;
+    margin-bottom: 20px;
+
+}
+
+.r1>img {
+    width: 100%;
+    height: 100%;
+}
+.r1 > a {
+    text-decoration: none;
+    text-align: center;
+    align-self: center;
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+.r2 {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 3fr 3fr 3fr 3fr 3fr;
+    grid-gap: .5em;
+    height: 1032px;
+}
+
+.r3 {
+    padding-top: 20px;
+    text-align: center;
+    width: 100vw;
+    margin-top: 20px;
+    height: 50px;
+    background-color: rgb(83, 8, 8);
+    align-self: center;
+    color: white;
+}
+
+.network,
+.database,
+.cybersecurity,
+.home-info,
+.web-dev {
+    width: 80%;
+    margin-left: 10%;
+    height: 200px;
+    background-color: rgb(153, 184, 212);
+
+}
+
+.network>p {
+    padding: 15px;
+}
+
+.net,
+.cyber {
+    width: 200px;
+    height: 150px;
+    padding: 15px;
+    float: left;
+}
+
+.data,
+.web {
+    width: 200px;
+    height: 150px;
+    padding: 15px;
+    float: right;
+}
+
+.btn-sign-in {
+    float: right;
+    width: 100px;
+    height: 35px;
+    background-color: darkblue;
+    color: white;
+    margin-top: -100px;
+    margin-right: 80px;
+}
+
+.btn-sign-up {
+    float: right;
+    width: 100px;
+    height: 35px;
+    background-color: rgb(94, 17, 7);
+    color: white;
+    margin-top: -100px;
+    margin-right: 200px;
+}
+.redirect {
+    background-color: lightcyan;
+    color: green;
+    padding: 0px 6px;
+}

@@ -1,0 +1,50 @@
+<body class="main-container">
+    <div class="r1">
+        <img src="./assets/img/Lono-name.gif">
+        <a (click)="navigateTo('login')"class="btn-sign-in"> Sign In</a>
+        <a (click)="navigateTo('signup')"class="btn-sign-up"> Sign Up</a>
+
+    </div>
+    <div class="r2">
+        <div class="r2c1">
+            <div class="left-nav">
+                <li><a (click)="navigateTo('home')">Home</a></li>
+                <li><a (click)="navigateTo('cybersecurity')">Cybersecurity</a></li>
+                <li><a (click)="navigateTo('network')">Networking</a></li>
+                <li><a (click)="navigateTo('database')">Databases</a></li>
+                <li><a (click)="navigateTo('web-development')">Wed Development</a></li>
+            </div>
+        </div>
+
+        <div class="r2c2">
+            <div>
+                <img class="prof-pic" src="./assets/img/prof-pic.png" alt="">
+                <h1 class="cur-job"> Current Job</h1>
+                <h1 class="cur-city"> Current city</h1>
+            </div>
+            <h2 class="Info">Experience</h2>
+            <h2 class="Info">Education</h2>
+            <h2 class="Info">Certifications</h2>
+            <h2 class="Info">Industry</h2>
+            <h2 class="Info">Interests</h2>
+
+        </div>
+        <div class="r2c3">
+            <div class="dropdown">
+                <img onclick="profile()" type="button" class="dropbtn" src="./assets/img/Newusericon.png"
+                    alt="User Photo">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Name</a>
+                    <a href="#">View Profile</a>
+                    <a href="#">Edit Profile</a>
+                    <a href="#">Bookmarks</a>
+                    <a href="#">Sign out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="r3">
+        Google Killer
+    </div>
+    <script type="text/javascript" src="../js/profile.js"></script>
+</body>
