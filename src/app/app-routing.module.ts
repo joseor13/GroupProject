@@ -10,6 +10,7 @@ import { WebDevelopmentComponent } from './web-development/web-development.compo
 import { CybersecurityComponent } from './cybersecurity/cybersecurity.component';
 import { NetworkComponent } from './network/network.component';
 import { FourofourComponent } from './fourofour/fourofour.component';
+import { BookmarksComponent } from './bookmarks/bookmarks.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,9 @@ component: HomeComponent
 }, {
   path: 'cybersecurity',
   component: CybersecurityComponent
+}, {
+  path: 'bookmarks',
+  component: BookmarksComponent
 }, {
   path: '**',
   component: FourofourComponent

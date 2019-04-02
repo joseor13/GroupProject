@@ -1,8 +1,8 @@
 <body class="main-container">
     <div class="r1">
-        <img src="./assets/img/Lono-name.gif">
-        <a (click)="navigateTo('login')"class="btn-sign-in"> Sign In</a>
-        <a (click)="navigateTo('signup')"class="btn-sign-up"> Sign Up</a>
+        <img src="./assets/img/lg-login-header.gif">
+        <a (click)="navigateTo('login')" class="btn-sign-in"> Sign In</a>
+        <a (click)="navigateTo('signup')" class="btn-sign-up"> Sign Up</a>
 
     </div>
     <div class="r2">
@@ -30,15 +30,14 @@
 
         </div>
         <div class="r2c3">
-            <div class="dropdown">
-                <img onclick="profile()" type="button" class="dropbtn" src="./assets/img/Newusericon.png"
-                    alt="User Photo">
-                <div id="myDropdown" class="dropdown-content">
+            <div ngbDropdown class="dropdown">
+                <img ngbDropdownToggle type="button" class="dropbtn" src="./assets/img/Newusericon.png" alt="User Photo">
+                <div ngbDropdownMenu id="myDropdown" class="dropdown-content">
                     <a href="#">Name</a>
-                    <a href="#">View Profile</a>
+                    <a (click)="navigateTo('profile')">View Profile</a>
                     <a href="#">Edit Profile</a>
-                    <a href="#">Bookmarks</a>
-                    <a href="#">Sign out</a>
+                    <a (click)="navigateTo('bookmarks')">Bookmarks</a>
+                    <a (click)="navigateTo('login')">Sign out</a>
                 </div>
             </div>
         </div>
@@ -46,5 +45,4 @@
     <div class="r3">
         Google Killer
     </div>
-    <script type="text/javascript" src="../js/profile.js"></script>
 </body>

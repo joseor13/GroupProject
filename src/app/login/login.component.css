@@ -1,0 +1,135 @@
+* 
+a {
+    text-decoration: none;
+}
+.main-container {
+    display: grid;
+    width: 100vw;
+    grid-template-rows: 1fr 8fr .5fr;
+    grid-gap: .5em;
+    height: 100%;
+}
+
+.r1 {
+    width: 100%;
+    background-color: gold;
+    height: 100px;
+    margin-bottom: 20px;
+
+}
+
+.r1>img {
+    width: 100%;
+    height: 100px;
+}
+.r1 > a {
+    text-decoration: none;
+    text-align: center;
+    align-self: center;
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+.r2 {
+    display: grid;
+    grid-template-columns: .025fr 8fr .025fr;
+    width: 80%;
+    margin-left: 10%;
+    height: 700px;
+}
+
+.r2c3,
+.r2c1 {
+    background-color: blanchedalmond;
+    align-content: center;
+}
+.r2c2 {
+    display: grid;
+    background-color: lightcyan;
+}
+.r3 {
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+    width: 100vw;
+    margin-top: 20px;
+    height: 50px;
+    background-color: rgb(83, 8, 8);
+    align-items: center;
+    color: white;
+
+}
+.login-form {
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    align-content: center;
+    width: 450px;
+    height: 445px;
+    background-color: lightblue;
+    padding: 5px 15px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-row-gap: 1em;
+    margin-top:-5px;
+}
+
+.login-container-grid {
+    display: grid;
+    grid-template-rows: 1fr 13fr 1fr;
+
+}
+
+.logo-name {
+    align-self: center;
+}
+
+.lbl-info {
+    font-size: 16px;
+    width: 330px;
+    justify-self: left;
+    margin: 0px 45px 0px 35px;
+}
+
+.btn-signup {
+    width: 350px;
+    float: right;
+    justify-self: right;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: darkblue;
+    color: yellow;
+    margin: 10px 45px 15px 30px;
+    height: 50px;
+}
+
+.login-input {
+    padding: 12px;
+    font-size: 12px;
+    width: 350px;
+    justify-self: left;
+    margin: -20px 45px 0px 35px;
+}
+.log-input-e {
+    float: right;
+    margin: -70px 40px 80px 100px;
+    width: 300px;
+    height: 35px;
+}
+.log-input-p {
+    float: right;
+    margin: -70px 10px 50px 5px;
+    width: 300px;
+    height: 35px;
+}
+.btn-login {
+    float: right;
+    margin: -70px 70px 100px 10px;
+    width: 90px;
+    height: 35px;
+    background-color: #0BA18A;
+    color:white;
+    font-weight: bold;
+    border: 1px solid whitesmoke;
+
+}
