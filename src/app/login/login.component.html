@@ -1,28 +1,29 @@
 <body class="main-container">
   <div class="r1">
     <img src="./assets/img/lg-login-header.gif">
-    <button type="submit" class="btn-login">Login</button>
-    <input type="password" class="log-input-p" placeholder="Password">
-    <input type="text" class="log-input-e" placeholder="E-mail">
-    
   </div>
   <div class="r2">
     <div class="r2c1">
     </div>
-
     <div class="r2c2">
       <form class="login-form box-shadow">
-        <label class="lbl-info">First Name</label>
-        <input type="text" class="login-input" placeholder="First-name">
-        <label class="lbl-info">Last Name</label>
-        <input type="text" class="login-input" placeholder="Last-name">
-        <label class="lbl-info">Email</label>
-        <input type="text" class="login-input" placeholder="E-mail">
-        <label class="lbl-info">Password</label>
-        <input type="password" class="login-input" placeholder="Password">
-        <button type="submit" class="btn-signup">Join now</button>
+        <div class="login-logo">
+          <img src="../../assets/img/lg-itcert.gif" alt="logo">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1" class="lbl-info">Email</label>
+          <input [(ngModel)]= "user.email" name="email" type="email" class="login-input" placeholder="email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1" class="lbl-info">Password</label>
+          <input [(ngModel)]= "user.password" name="password"  type="password" class="login-input" placeholder="password">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Remember Me?</label>
+        </div>
+        <button mat-raised-button class="btn-signup" (click)= "login(user)">Join now</button>
       </form>
-
     </div>
     <div class="r2c3">
     </div>

@@ -1,0 +1,99 @@
+*
+.header-logo>img {
+    height: 100px;
+    width: 100%;
+
+}
+
+.navigation-bar>ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(14, 13, 13, 0.986);
+}
+
+.navigation-bar>ul>li {
+    float: left;
+    padding: 5px 2%;
+
+}
+
+.navigation-bar>ul>li>a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+
+
+}
+
+.category-content {
+    margin-left: 7%;
+    margin-right: 7%;
+
+
+}
+
+.cert-title,
+.description-title,
+.category-content>p {
+    background-color: rgb(153, 184, 212);
+}
+
+.category-content>p {
+    padding-bottom: 15px;
+}
+
+.cert-title {
+    font-size: 36px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.description-title,
+.category-content>p {
+    padding-left: 15px;
+    text-align: left;
+}
+
+.description-title {
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.cert-img {
+    max-width: 150px;
+    max-height: 150px;
+    border-style: inset;
+    border-color: black;
+    border-radius: 15px;
+    border-spacing: 2px;
+
+}
+
+.cert-links {
+    margin: 0px 7%;
+    background-color: rgb(153, 184, 212);
+    padding-bottom:20px;
+}
+
+.cert-links>a {
+    padding: 0px 11%;
+
+}
+
+.cert-links>h2 {
+    padding-top:20px;
+    padding-bottom:30px;
+    padding-left:15px;
+}
+.footer-text > p{
+    text-align:center;
+    font-size:20px;
+    padding-top:8px;
+    background-color: rgb(83, 8, 8);
+    color:white;
+    height: 100%;
+}

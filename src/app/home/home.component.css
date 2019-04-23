@@ -41,6 +41,9 @@ p {
     font-weight: bold;
     color: white;
 }
+.r1 > a:hover {
+    cursor: pointer;
+}
 .r2 {
     display: grid;
     width: 100%;
@@ -110,6 +113,9 @@ p {
     color: white;
     margin-top: -100px;
     margin-right: 200px;
+}
+.btn-sign-up:hover {
+    cursor: hand;
 }
 .redirect {
     background-color: lightcyan;

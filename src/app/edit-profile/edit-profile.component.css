@@ -1,4 +1,4 @@
-* 
+
 h2 {
     font-size: 25px;
     font-weight: bold;
@@ -25,10 +25,9 @@ p {
 .main-container {
     display: grid;
     width: 100vw;
-    grid-template-rows: 1.5fr 6fr .5fr;
+    grid-template-rows: 1.5fr 8fr .5fr;
     grid-gap: .5em;
     height: 100%;
-    overflow: auto;
 }
 
 .r1 {
@@ -60,6 +59,7 @@ p {
     margin-left: 2%;
     max-height: 100%;
 }
+
 .r1c1 {
     width: 200px;
 }
@@ -93,21 +93,29 @@ p {
     color: white;    
 }
 .r2c2 {
-    grid-template-rows: 3.5fr 6fr 6fr 6fr 6fr 6fr;
+    grid-template-rows: 3.5fr 3fr 3fr 3fr 3fr 3fr ;
     grid-row-gap: .5em;
-    background-color: rgb(255, 242, 224);
+    background-color: rgb(254, 254, 255);
+}
+.form-profile {
+    width: 100%;
+    height: 100%;
 }
 .Info {
     display: block;
-    background-color: cornflowerblue;
-    color: white;
-    font-size: 20px;
+    color: rgb(25, 3, 85);
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+    background-color: lightskyblue;
 }
-.prof-pic {
+/* .prof-pic  */
+.img-preview-container{
     padding: 30px 0px 0px 30px;
     float: left;
     height: 200px;
     width: 200px;
+    object-fit: contain;
 }
 .r3 {
     display: block;
@@ -120,19 +128,6 @@ p {
     align-items: center;
     color: white;
 
-}
-.form-group1{
-    padding-left: 210px;
-    padding-top: 85px;
-    font-size: 20px;
-    padding-bottom: 20px;
-}
-.form-group2 {
-    padding-left: 210px;
-    padding-top: 15px;
-    font-size: 20px;
-    padding-bottom: 50px;
-    background-color: transparent;
 }
 .btn-sign-in {
     float: right;
@@ -208,4 +203,70 @@ p {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
     display: block;
+}
+.btn-cancel {
+    float: right;
+    background-color: brown;
+    color: white;
+    width: 100px;
+    height: 40px;
+    margin-right: 55px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.btn-cancel:hover {
+    background-color: darksalmon;
+}
+.btn-submit {
+    float: right;
+    background-color: darkgreen;
+    color: white;
+    width: 100px;
+    height: 40px;
+    margin-right: 25px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+.btn-submit:hover {
+    background-color: lime;
+}
+.form-group1 {
+    display: block;
+    float: right;
+    width: 300px;
+    margin-top: -250px;
+    margin-right: 580px;
+}
+.form-group2 {
+    display: block;
+    float: right;
+    width: 300px;
+    margin-top: -150px;
+    margin-right: 580px;
+}
+/* .top-c2  */
+
+.image-upload-container{
+    display: block;
+    padding: 214px 0px 0px 18px;
+    width: 250px;
+}
+.btn-upload {
+    background-color: black;
+    color: cyan;
+    margin: 5px 10px 5px 100px;
+    width: 80px;
+}
+.lbl-sect {
+    background-color: rgb(149, 202, 235);
+}
+.image-upload-container {
+    cursor: pointer;
+}
+.img-preview-container {
+    background-color: #3e8e41;
+    position: relative;
+}
+.img-preview {
+    display: none;
 }

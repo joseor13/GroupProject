@@ -65,23 +65,28 @@ a {
     justify-self: center;
     align-self: center;
     align-content: center;
-    width: 550px;
+    width: 500px;
     height: 600px;
-    background-color: rgb(181, 236, 210);
+    background-color: lightblue;
     padding: 5px 15px;
     margin-top:-5px;
 }
-.login-form > .login-logo > img {
-    width: 250px;
-    height: 250px;
-    margin: 20px 20px 20px 130px; 
+
+.login-container-grid {
+    display: grid;
+    grid-template-rows: 1fr 13fr 1fr;
+
+}
+
+.logo-name {
+    align-self: center;
 }
 
 .lbl-info {
-    font-size: 18px;
+    font-size: 16px;
     width: 330px;
     justify-self: left;
-    margin: 0px 30px 10px 60px;
+    margin: 0px 45px 0px 35px;
 }
 
 .btn-signup {
@@ -92,20 +97,40 @@ a {
     font-size: 15px;
     background-color: darkblue;
     color: yellow;
-    margin: 10px 80px 15px 50px;
+    margin: 10px 45px 15px 30px;
     height: 50px;
 }
 
 .login-input {
     padding: 12px;
     font-size: 12px;
-    width: 400px;
+    width: 350px;
     justify-self: left;
-    margin: -20px 45px 0px 60px;
+    margin: -20px 45px 0px 35px;
 }
-.form-check-input {
-    margin-left: 40px;
+.log-input-e {
+    float: right;
+    margin: -70px 40px 80px 100px;
+    width: 300px;
+    height: 35px;
 }
-.form-check-label {
-    margin-left: 60px;
+.log-input-p {
+    float: right;
+    margin: -70px 10px 50px 5px;
+    width: 300px;
+    height: 35px;
+}
+.btn-login {
+    float: right;
+    margin: -70px 70px 100px 10px;
+    width: 90px;
+    height: 35px;
+    background-color: #0BA18A;
+    color:white;
+    font-weight: bold;
+    border: 1px solid whitesmoke;
+
+}
+.reg-img {
+  margin-left: 45px; 
 }

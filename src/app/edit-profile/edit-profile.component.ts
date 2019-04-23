@@ -3,6 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ToastService } from '../toast/toast.service';
 import { HttpService } from '../../shared-service/http.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
+
+class ImageSnippet {
+  pending = false;
+  status = 'init';
+
+  constructor(public src: string, public file: File) { }
+}
 
 export interface IProfile {
   id?: number;
@@ -15,25 +23,64 @@ export interface IProfile {
   industry: string;
   interests: string;
 }
-@Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
-})
-export class ProfileComponent implements OnInit {
 
+@Component({
+  selector: 'app-edit-profile',
+  templateUrl: './edit-profile.component.html',
+  styleUrls: ['./edit-profile.component.css']
+})
+export class EditProfileComponent implements OnInit {
   profiles = [];
+  selectedFile: ImageSnippet;
+
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private toastService: ToastService,
-    private http: HttpService
+    private http: HttpService,
+   
   ) { }
+  // upload image//
+  private onSuccess() {
+    this.selectedFile.pending = false;
+    this.selectedFile.status = 'ok';
+  }
+  private onError() {
+    this.selectedFile.pending = false;
+    this.selectedFile.status = 'fail';
+    this.selectedFile.src = '';
+  }
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    console.log('upload image: ', file);
+
+    const reader = new FileReader();
+    console.log('upload look: ', reader);
+
+    reader.addEventListener('load', (event: any) => {
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+      console.log('image: ', this.selectedFile);
+
+      this.selectedFile.pending = true;
+      this.http.uploadImage(this.selectedFile.file).subscribe(
+        (res) => {
+          this.onSuccess();
+          console.log('success: ', res);
+        },
+        (err) => {
+          this.onError();
+          console.log('error: ', err);
+        });
+    });
+    reader.readAsDataURL(file);
+  }
+
+  // upload image//
 
   async ngOnInit() {
     await this.refresh();
   }
-
   async refresh() {
     this.profiles = await this.getProfiles('userinfo');
   }
@@ -93,4 +140,5 @@ export class ProfileComponent implements OnInit {
       this.router.navigate(['login']);
     }
   }
+
 }
