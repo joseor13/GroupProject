@@ -23,6 +23,19 @@ import { FourofourComponent } from './fourofour/fourofour.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { RegisterComponent } from './register/register.component';
+import { CertificationComponent } from './certification/certification.component';
+import { CompTIAAComponent } from './comp-tiaa/comp-tiaa.component';
+import { CompTIALinuxComponent } from './comp-tialinux/comp-tialinux.component';
+import { MtaCertComponent } from './mta-cert/mta-cert.component';
+import { Db2CertComponent } from './db2-cert/db2-cert.component';
+import { OcaCertComponent } from './oca-cert/oca-cert.component';
+import { OcpCertComponent } from './ocp-cert/ocp-cert.component';
+import { CcnaCertComponent } from './ccna-cert/ccna-cert.component';
+import { CompTIANComponent } from './comp-tian/comp-tian.component';
+import { McsaCertComponent } from './mcsa-cert/mcsa-cert.component';
+import { AceCertComponent } from './ace-cert/ace-cert.component';
+import { AwsDevCertComponent } from './aws-dev-cert/aws-dev-cert.component';
+import { CiwCertComponent } from './ciw-cert/ciw-cert.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +49,20 @@ import { RegisterComponent } from './register/register.component';
     FourofourComponent,
     BookmarksComponent,
     EditProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    CertificationComponent,
+    CompTIAAComponent,
+    CompTIALinuxComponent,
+    MtaCertComponent,
+    Db2CertComponent,
+    OcaCertComponent,
+    OcpCertComponent,
+    CcnaCertComponent,
+    CompTIANComponent,
+    McsaCertComponent,
+    AceCertComponent,
+    AwsDevCertComponent,
+    CiwCertComponent
   ],
   imports: [
     BrowserModule,
