@@ -16,6 +16,7 @@
 .navigation-bar>ul>li {
     float: left;
     padding: 5px 2%;
+    border:solid 1px green;
 
 }
 
@@ -25,7 +26,9 @@
     text-decoration: none;
     font-size: 20px;
     color: white;
-
+    width: 170px;
+    margin-left: 20px;
+   
 
 }
 
@@ -70,6 +73,7 @@
     border-color: black;
     border-radius: 15px;
     border-spacing: 2px;
+    margin: 13px 150px 70px 150px;
 
 }
 
@@ -96,4 +100,28 @@
     background-color: rgb(83, 8, 8);
     color:white;
     height: 100%;
+}
+.gallery-table>tbody>tr {
+    text-align: center;
+    height: 100px;
+    
+
+}
+
+.gallery-table>tbody>tr>td {
+    font-size: 13px;
+    color: rgb(233, 19, 19);
+}
+.gallery-table>tbody>tr>td>a {
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.gallery-table>tbody>tr>td>img {
+    width: 80%;
+    align-content: center;
+    padding: 2px;
+    margin-bottom: 5px; 
 }

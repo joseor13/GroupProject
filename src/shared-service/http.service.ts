@@ -22,7 +22,7 @@ export class HttpService {
      uploadImage(image: File): Observable<Response> {
         const formData =  new FormData();
         formData.append('image', image);
-        return this.http.post('http://localhost:3002/api/v1/userinfo/image_url', formData);
+        return this.http.post('/api/v1/userinfo/image_url', formData);
     }
 
     async get(path: string) {

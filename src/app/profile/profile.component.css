@@ -209,3 +209,12 @@ p {
 .show {
     display: block;
 }
+.form-control {
+    background-color: transparent;
+    color: darkslateblue;
+    border: white;
+    font-size: 20px;
+}
+.example-card {
+    background-color: rgb(236, 227, 245);
+}

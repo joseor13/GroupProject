@@ -1,3 +1,78 @@
-<p>
-  cybersecurity works!
-</p>
+<body class="main-body">
+    <div class="header-logo">
+        <img src="./assets/img/lg-login-header.gif">
+    </div>
+    <div class="navigation-bar">
+        <ul>
+            <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/cybersecurity">General IT</a></li>
+            <li><a routerLink="/network">Networking</a></li>
+            <li><a routerLink="/database">Database</a></li>
+            <li><a routerLink="/web-development">Wed Development</a></li>
+            <li><a *ngIf="!currentUser" (click)='logout()'>Sign out</a></li>
+        </ul>
+    </div>
+
+    <div class="category-content">
+        <h2 class="cert-title">
+            General IT
+        </h2>
+        <h2 class="description-title">
+            Description
+        </h2>
+        <p>
+            Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
+            Blackboard may be unavailable to users. Turnitin services may be unavailable during their scheduled
+            maintenance windows which are the first and third Saturday of each month from 7:00 am until 10:00 am PST. An
+            announcement will appear inside Turnitin in advance when the system will be unavailable for scheduled
+            maintenance
+            Blackboard will undergo maintenance every Tuesday from 10:00 pm until 2:00 am Wednesday. During this time
+            Blackboard may be unavailable to users. Turnitin services may be unavailable during their scheduled
+            maintenance windows which are the first and third Saturday of each month from 7:00 am until 10:00 am PST. An
+            announcement will appear inside Turnitin in advance when the system will be unavailable for scheduled
+            maintenance
+
+        </p>
+    </div>
+    <div class="cert-links">
+        <h2>General IT Certifications</h2>
+        <table class="gallery-table" >
+            <tr>
+                <td>
+                    <img src="./assets/img/comptiaA+.png" class="cert-img">
+                    <a href="#" class="comptiaA+">CompTia A+</a>
+                </td>
+                <td>
+                    <img src="./assets/img/comptiaLinux.png" class="cert-img">
+                    <a href="#" class="comptiaLinux">CompTia Linux</a>
+                </td>
+                <td>
+                    <img src="./assets/img/MTA_logo.png" class="cert-img">
+                    <a href="#" class="mta">MTA</a>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+    <div class="footer-text">
+        <p>
+            Created by Team Google Killer. Copyright @2019.
+        </p>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

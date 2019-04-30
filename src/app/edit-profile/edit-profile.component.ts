@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ToastService } from '../toast/toast.service';
 import { HttpService } from '../../shared-service/http.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpEventType } from '@angular/common/http';
 
 class ImageSnippet {
   pending = false;
@@ -32,14 +34,14 @@ export interface IProfile {
 export class EditProfileComponent implements OnInit {
   profiles = [];
   selectedFile: ImageSnippet;
-
-
+  // selectedFile: File = null;
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private toastService: ToastService,
     private http: HttpService,
-   
+    private https: HttpClient
+
   ) { }
   // upload image//
   private onSuccess() {
@@ -77,7 +79,27 @@ export class EditProfileComponent implements OnInit {
   }
 
   // upload image//
+  // upload image 2
+  // onFileSelected(event) {
+  //   this.selectedFile  =  <File>event.target.files[0];
+  // }
+  // onUpload() {
+  //   const fd = new FormData();
+  //   fd.append('image', this.selectedFile, this.selectedFile.name);
+  //   this.https.post('userinfo/image', fd, {
+  //     reportProgress: true,
+  //     observe: 'events'
+  //   })
+  //   .subscribe(event => {
+  //     if (event.type === HttpEventType.UploadProgress) {
+  //       console.log('upload progress: ' + Math.round(event.loaded / event.total * 100) + '%');
+  //     } else if (event.type === HttpEventType.Response) {
+  //       console.log(event);
+  //     }
 
+  //   });
+  // }
+// upload image 2
   async ngOnInit() {
     await this.refresh();
   }
@@ -93,7 +115,7 @@ export class EditProfileComponent implements OnInit {
 
   async createUserinfo() {
     const userinfo = {
-      image_url: null,
+      image: null,
       first_name: null,
       last_name: null,
       city: null,

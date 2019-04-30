@@ -6,19 +6,12 @@
   </div>
   <div class="navigation-bar">
       <ul>
-          <li><a (click)="navigateTo('home')">Home</a></li>
-          <li><a (click)="navigateTo('cybersecurity')">General IT</a></li>
-          <li>
-              <a href="WebDev.html">Web Development</a>
-          </li>
-          <li>
-              <a href="Networking.html">Networking</a>
-          </li>
-          <li>
-              <a href="Database.html">Database</a>
-          </li>
-
-
+            <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/cybersecurity">General IT</a></li>
+            <li><a routerLink="/network">Networking</a></li>
+            <li><a routerLink="/database">Database</a></li>
+            <li><a routerLink="/web-development">Wed Development</a></li>
+            <li><a *ngIf="!currentUser" (click)='logout()'>Sign out</a></li>
       </ul>
   </div>
 
@@ -45,10 +38,23 @@
   </div>
   <div class="cert-links">
       <h2>Database Certifications</h2>
-      <a href="#" class="orcl-prof-href"><img src="./assets/img/orcl-cert-professional.png" class="cert-img"></a>
-      <a href="#" class="orcl-assoc-href"><img src="./assets/img/orcl_cert_assoc.jpg" class="cert-img"></a>
-      <a href="#" class="ibm-db2-href"><img src="./assets/img/ibm-db2.png" class="cert-img"></a>
+      <table class="gallery-table" >
+            <tr>
+                <td>
+                        <img src="./assets/img/orcl-cert-professional.png" class="cert-img">
+                        <a href="#" class="orcl-prof-href">Oracle Certified Proffesional</a>
+                </td>
+                <td>
+                        <img src="./assets/img/orcl_cert_assoc.jpg" class="cert-img">
+                        <a href="#" class="orcl-assoc-href">Oracle Certified Associate</a>
+                </td>
+                <td>
+                        <img src="./assets/img/ibm-db2.png" class="cert-img">
+                        <a href="#" class="ibm-db2-href">DB2</a>
+                </td>
 
+            </tr>
+        </table>
   </div>
   <div class="footer-text">
       <p>

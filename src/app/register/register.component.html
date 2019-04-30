@@ -1,9 +1,9 @@
 <body class="main-container">
   <div class="r1">
     <img src="./assets/img/lg-login-header.gif">
-    <button routerLink="login(userinfo)" type="submit" class="btn-login">Login</button>
+    <!-- <button routerLink="login(userinfo)" type="submit" class="btn-login">Login</button>
     <input [(ngModel)]="userinfo.password" type="password" class="log-input-p" placeholder="Password">
-    <input [(ngModel)]="userinfo.email" type="text" class="log-input-e" placeholder="email">
+    <input [(ngModel)]="userinfo.email" type="text" class="log-input-e" placeholder="email"> -->
 
   </div>
   <div class="r2">
@@ -11,43 +11,37 @@
     </div>
 
     <div class="r2c2">
-      <form class="login-form box-shadow">
-        <img class="reg-img" src="../../assets/img/register.gif" alt="logo">
-        <div class="form-group">
-          <label for="firstName"><b>First Name</b></label>
-          <input [(ngModel)]="userinfo.first_name" type="text" placeholder="firstName" class="form-control"
-            name="firstName" required>
-        </div>
+        <form class="login-form box-shadow">
+            <img class="reg-img" src="../../assets/img/register.gif" alt="logo">
+            <div class="form-group">
+              <label for="username"><b>First Name</b></label>
+              <input [(ngModel)]="user.username" type="text" placeholder="Username" class="form-control"
+                name="Username" required>
+            </div>
 
-        <div class="form-group">
-          <label for="lastName"><b>Last Name</b></label>
-          <input [(ngModel)]="userinfo.last_name" type="text" placeholder="lastName" class="form-control"
-            name="lastName" required>
+            <!-- <div class="form-group">
+              <label for="last_name" vi><b>Last Name</b></label>
+              <input [(ngModel)]="userinfo.last_name" type="text" placeholder="lastName" class="form-control"
+                name="lastName" required>
 
-        </div>
-        <div class="form-group">
-          <label for="email"><b>Email</b></label>
-          <input [(ngModel)]="userinfo.email" type="text" placeholder="email" class="form-control" name="email"
-            required>
+            </div> -->
+            <div class="form-group">
+              <label for="email"><b>Email</b></label>
+              <input [(ngModel)]="user.email" type="text" placeholder="email" class="form-control" name="email"
+                required>
 
-        </div>
-        <div class="form-group">
-          <label for="password"><b>Password</b></label>
-          <input [(ngModel)]="userinfo.password" type="password" placeholder="password" class="form-control"
-            name="password" required>
+            </div>
+            <div class="form-group">
+              <label for="password"><b>Password</b></label>
+              <input [(ngModel)]="user.password" type="password" placeholder="password" class="form-control"
+                name="password" required>
 
-        </div>
-
-
-        <div class="form-group">
-          <button class="btn btn-primary" (click)="createUserinfo()">Register</button>
-          <a routerLink="/login" class="btn btn-link">Cancel</a>
-        </div>
-
-
-      </form>
-
-
+            </div>
+              <div class="form-group">
+                <button class="btn btn-primary" (click)="createUser()">Register</button>
+                <a routerLink="/login" class="btn btn-link">Cancel</a>
+              </div>
+    </form>
     </div>
     <div class="r2c3">
     </div>

@@ -17,6 +17,7 @@
       <mat-card class="example-card" *ngFor="let userinfo of profiles; let i = index">
         <mat-card-content>
          <div>
+           <!--Method one to upload-->
             <div *ngIf="selectedFile" class="img-preview-container">
               <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
                 (ngStyle)="{'background-image': 'url('+ selectedFile.src + ')'}">
@@ -32,17 +33,24 @@
               <span>Select Image</span>
               <input #imageInput 
               type="file" a
-              ccept="image/*" 
+              accept="image/*" 
               (change)="processFile(imageInput)">
             </label>
-<!-- Method one to upload -->
-            <!-- <img class="prof-pic" id="image" [src]="userinfo.image_url" alt="profile">
-            <div class="top-c2">
-              <label for="image" color="primary">Select your profile picture</label>
-              <input [(ngModel)]="userinfo.image_url" type="file" class="form-control-file" placeholder="image">
-              <button class="btn-upload" type="button" (click)="onUpload()">Upload</button>
-            </div> 
--- Method one to upload -->
+           <!-- Method one to upload-->
+             <!-- <img class="prof-pic" id="image_" [src]="userinfo.image_url" alt="profile"> -->
+            <!-- <div class="top-c2">
+              <input 
+              style="display: block"
+              type="file"
+              (change)="onFileSelected($event)"
+              #fileInput>
+              <button type="button" (click)="fileInput.click()">Pick File</button> -->
+             
+              <!-- <label for="image" color="primary">Select your profile picture</label>
+              <input [(ngModel)]="userinfo.image_url" type="file" class="form-control-file" placeholder="image" (change)="onFileSelected($event)">
+              <button class="btn-upload" type="button" (click)="onUpload()">Upload</button> -->
+              
+
             <div class="form-group2 col-md-6">
               <label class="lbl-sect" for="inputWork"><b>Job</b></label>
               <input [(ngModel)]="userinfo.job" type="text" class="form-control" id="inputWork">
@@ -64,17 +72,17 @@
           </div>
           <div>
             <label class="Info" for="exampleFormControlTextarea1">Certifications</label>
-            <textarea [(ngModel)]="userinfo.certifications" class="form-control" id="exampleFormControlTextarea1"
+            <textarea [(ngModel)]="userinfo.certifications" class="form-control" id="exampleFormControlTextarea1" placeholder="Certifications"
               rows="6"></textarea>
           </div>
           <div>
             <label class="Info" for="exampleFormControlTextarea1">Industry</label>
-            <textarea [(ngModel)]="userinfo.industry" class="form-control" id="exampleFormControlTextarea1"
+            <textarea [(ngModel)]="userinfo.industry" class="form-control" id="exampleFormControlTextarea1" placeholder="Industry"
               rows="6"></textarea>
           </div>
           <div>
             <label class="Info" for="exampleFormControlTextarea1">Interests</label>
-            <textarea [(ngModel)]="userinfo.interests" class="form-control" id="exampleFormControlTextarea1"
+            <textarea [(ngModel)]="userinfo.interests" class="form-control" id="exampleFormControlTextarea1" placeholder="Interests"
               rows="6"></textarea>
           </div>
           <mat-card-actions>
@@ -87,12 +95,8 @@
       </mat-card>
     </div>
     <div class="r2c3">
-      <!-- <div>
-        <label for="name">Name</label>
-        <input [(ngModel)]="userinfo.first_name, userinfo.last_name" type="text" class="form-control" id="name">
-      </div> -->
       <div ngbDropdown class="dropdown">
-        <img ngbDropdownToggle type="button" class="dropbtn" src="./assets/img/Newusericon.png" alt="User Photo">
+        <img ngbDropdownToggle type="button" class="dropbtn" src="./assets/img/lg-itcert.gif" alt="User Photo">
         <div ngbDropdownMenu id="myDropdown" class="dropdown-content">
           <a routerLink="/profile">View Profile</a>
           <a routerLink="/edit-profile">Edit Profile</a>

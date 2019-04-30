@@ -8,8 +8,7 @@ export interface IUser {
   id?: number;
   email: string;
   password: string;
-  first_name: string;
-  last_name: string;
+  username: string;
 }
 @Component({
   selector: 'app-register',
@@ -17,7 +16,7 @@ export interface IUser {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  userinfo: IUser = { email: null, password: null, first_name: null, last_name: null };
+  user: IUser = { email: null, password: null, username: null};
   currentUser = {};
   loggedIn = false;
   profiles = [];
@@ -29,49 +28,55 @@ export class RegisterComponent implements OnInit {
   }
 
   async ngOnInit() {
-    // const token = localStorage.getItem('id_token');
-    // console.log('from login ngonInit token: ', token);
-    // if (token != null) {
-    //   this.loggedIn = true;
-    //   this.router.navigate(['profile']);
-    // } else {
-    //   this.loggedIn = false;
-    // }
-
     await this.refresh();
   }
   async refresh() {
-    this.profiles = await this.getProfiles('userinfo');
-  }
+      this.profiles = await this.createUser();
+
+      const token = localStorage.getItem('id_token');
+      console.log('from login ngonInit token: ', token);
+      if (token != null) {
+        this.loggedIn = true;
+        this.router.navigate(['profile']);
+      } else {
+        this.loggedIn = false;
+      }
+    }
+
+    async createUser() {
+      const user = {
+        email: null,
+         username: null,
+         password: null
+      };
+      const resp = await this.http.post('user', user);
+      console.log('from createUser resp: ', resp);
+      if (resp) {
+        this.profiles.unshift(resp);
+      } else {
+        this.toastService.showToast('danger', 3000, 'userinfo create failed');
+      }
+      return resp;
+    }
+
+  //   await this.refresh();
+  // }
+  // async refresh() {
+  //   this.profiles = await this.getProfiles('user');
+  // }
   async getProfiles(path: string) {
     const resp = await this.http.get(path);
     console.log('resp from getProfiles()', resp);
     return resp;
   }
-  // async login(user: IUser) {
-  //   const resp: any = await this.http.post('user/login', user);
-  //   if (resp && resp.token) {
-  //     localStorage.setItem('id_token', resp.token);
-  //     this.toastService.showToast('success', 7000, 'Login success.');
-  //     this.router.navigate(['profile']);
-  //   } else {
-  //     this.toastService.showToast('danger', 7000, 'Login failed.');
-  //   }
-  // }
-  async createUserinfo() {
-    const userinfo = {
-      first_name: null,
-      last_name: null,
-       email: null,
-       password: null
-    };
-    const resp = await this.http.post('userinfo', userinfo);
-    console.log('from createUserinfo resp: ', resp);
-    if (resp) {
-      this.profiles.unshift(resp);
+  async login(user: IUser) {
+    const resp: any = await this.http.post('user/login', user);
+    if (resp && resp.token) {
+      localStorage.setItem('id_token', resp.token);
+      this.toastService.showToast('success', 7000, 'Login success.');
+      this.router.navigate(['profile']);
     } else {
-      this.toastService.showToast('danger', 3000, 'userinfo create failed');
+      this.toastService.showToast('danger', 7000, 'Login failed.');
     }
-    return resp;
   }
 }
