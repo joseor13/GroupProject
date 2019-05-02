@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CompTIALinuxComponent } from './comp-tialinux.component';
+import { AwsCertComponent } from './aws-cert.component';
 
-describe('CompTIALinuxComponent', () => {
-  let component: CompTIALinuxComponent;
-  let fixture: ComponentFixture<CompTIALinuxComponent>;
+describe('AwsCertComponent', () => {
+  let component: AwsCertComponent;
+  let fixture: ComponentFixture<AwsCertComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CompTIALinuxComponent ]
+      declarations: [ AwsCertComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CompTIALinuxComponent);
+    fixture = TestBed.createComponent(AwsCertComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

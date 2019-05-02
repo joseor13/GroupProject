@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CompTIANComponent } from './comp-tian.component';
+import { CompTiaNetworkComponent } from './comp-tia-network.component';
 
-describe('CompTIANComponent', () => {
-  let component: CompTIANComponent;
-  let fixture: ComponentFixture<CompTIANComponent>;
+describe('CompTiaNetworkComponent', () => {
+  let component: CompTiaNetworkComponent;
+  let fixture: ComponentFixture<CompTiaNetworkComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CompTIANComponent ]
+      declarations: [ CompTiaNetworkComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CompTIANComponent);
+    fixture = TestBed.createComponent(CompTiaNetworkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

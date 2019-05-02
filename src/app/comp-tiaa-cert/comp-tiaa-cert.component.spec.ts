@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CompTIAAComponent } from './comp-tiaa.component';
+import { CompTiaaCertComponent } from './comp-tiaa-cert.component';
 
-describe('CompTIAAComponent', () => {
-  let component: CompTIAAComponent;
-  let fixture: ComponentFixture<CompTIAAComponent>;
+describe('CompTiaaCertComponent', () => {
+  let component: CompTiaaCertComponent;
+  let fixture: ComponentFixture<CompTiaaCertComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CompTIAAComponent ]
+      declarations: [ CompTiaaCertComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CompTIAAComponent);
+    fixture = TestBed.createComponent(CompTiaaCertComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

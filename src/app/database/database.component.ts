@@ -17,6 +17,9 @@ export class DatabaseComponent implements OnInit {
 
   ngOnInit() {
   }
+  navigateTo(path: string) {
+    this.router.navigate([path]);
+  }
   async logout() {
     const resp = await this.http.logout();
     if (resp.statusCode === 200) {
