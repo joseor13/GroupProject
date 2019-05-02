@@ -16,9 +16,9 @@
     <div class="r2c2">
       <mat-card class="example-card" *ngFor="let userinfo of profiles; let i = index">
         <mat-card-content>
-         <div>
-           <!--Method one to upload-->
-            <div *ngIf="selectedFile" class="img-preview-container">
+          
+            <!--Method one to upload-->
+            <!-- <div *ngIf="selectedFile" class="img-preview-container">
               <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
                 (ngStyle)="{'background-image': 'url('+ selectedFile.src + ')'}">
               </div>
@@ -35,22 +35,20 @@
               type="file" a
               accept="image/*" 
               (change)="processFile(imageInput)">
-            </label>
-           <!-- Method one to upload-->
-             <!-- <img class="prof-pic" id="image_" [src]="userinfo.image_url" alt="profile"> -->
-            <!-- <div class="top-c2">
-              <input 
-              style="display: block"
-              type="file"
-              (change)="onFileSelected($event)"
-              #fileInput>
-              <button type="button" (click)="fileInput.click()">Pick File</button> -->
-             
-              <!-- <label for="image" color="primary">Select your profile picture</label>
-              <input [(ngModel)]="userinfo.image_url" type="file" class="form-control-file" placeholder="image" (change)="onFileSelected($event)">
-              <button class="btn-upload" type="button" (click)="onUpload()">Upload</button> -->
-              
+            </label> -->
+            <!-- Method one to upload-->
+            <div>
+            <img class="prof-pic" id="image_" [src]="userinfo.image_url" alt="profile">
+            <div class="top-c2">
+              <!-- <input style="display: block" type="file" (change)="onFileSelected($event)" #fileInput>
+              <button type="button" (click)="fileInput.click()">Pick File</button> --> -->
 
+              <label for="image" color="primary">Select your profile picture</label>
+              <input [(ngModel)]="userinfo.image_url" type="file" class="form-control-file" placeholder="image"
+                (change)="onFileSelected($event)">
+              <button class="btn-upload" type="button" (click)="onUpload()">Upload</button>
+
+            </div>
             <div class="form-group2 col-md-6">
               <label class="lbl-sect" for="inputWork"><b>Job</b></label>
               <input [(ngModel)]="userinfo.job" type="text" class="form-control" id="inputWork">
@@ -61,6 +59,8 @@
             </div>
           </div>
           <div>
+            <!-- <input [(ngModel)]="userinfo.image_url" type="file" name="Att_AttributeID" (change)="fileSelect($event)"
+        class="inputField" /> -->
             <label class="Info" for="exampleFormControlTextarea1">Experience</label>
             <textarea [(ngModel)]="userinfo.experience" class="form-control" id="exampleFormControlTextarea1"
               rows="6"></textarea>
@@ -72,18 +72,18 @@
           </div>
           <div>
             <label class="Info" for="exampleFormControlTextarea1">Certifications</label>
-            <textarea [(ngModel)]="userinfo.certifications" class="form-control" id="exampleFormControlTextarea1" placeholder="Certifications"
-              rows="6"></textarea>
+            <textarea [(ngModel)]="userinfo.certifications" class="form-control" id="exampleFormControlTextarea1"
+              placeholder="Certifications" rows="6"></textarea>
           </div>
           <div>
             <label class="Info" for="exampleFormControlTextarea1">Industry</label>
-            <textarea [(ngModel)]="userinfo.industry" class="form-control" id="exampleFormControlTextarea1" placeholder="Industry"
-              rows="6"></textarea>
+            <textarea [(ngModel)]="userinfo.industry" class="form-control" id="exampleFormControlTextarea1"
+              placeholder="Industry" rows="6"></textarea>
           </div>
           <div>
             <label class="Info" for="exampleFormControlTextarea1">Interests</label>
-            <textarea [(ngModel)]="userinfo.interests" class="form-control" id="exampleFormControlTextarea1" placeholder="Interests"
-              rows="6"></textarea>
+            <textarea [(ngModel)]="userinfo.interests" class="form-control" id="exampleFormControlTextarea1"
+              placeholder="Interests" rows="6"></textarea>
           </div>
           <mat-card-actions>
             <div>
@@ -107,6 +107,6 @@
     </div>
   </div>
   <div class="r3">
-    Google Killer
+    Created by Team Google Killer. Copyright @2019.
   </div>
 </body>

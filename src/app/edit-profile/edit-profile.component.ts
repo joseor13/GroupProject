@@ -11,7 +11,7 @@ class ImageSnippet {
   pending = false;
   status = 'init';
 
-  constructor(public src: string, public file: File) { }
+  //   constructor(public src: string, public file: File) { }
 }
 
 export interface IProfile {
@@ -33,8 +33,8 @@ export interface IProfile {
 })
 export class EditProfileComponent implements OnInit {
   profiles = [];
-  selectedFile: ImageSnippet;
-  // selectedFile: File = null;
+  // selectedFile: ImageSnippet;
+  selectedFile: File = null;
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -44,64 +44,70 @@ export class EditProfileComponent implements OnInit {
 
   ) { }
   // upload image//
-  private onSuccess() {
-    this.selectedFile.pending = false;
-    this.selectedFile.status = 'ok';
-  }
-  private onError() {
-    this.selectedFile.pending = false;
-    this.selectedFile.status = 'fail';
-    this.selectedFile.src = '';
-  }
-  processFile(imageInput: any) {
-    const file: File = imageInput.files[0];
-    console.log('upload image: ', file);
+  // private onSuccess() {
+  //   this.selectedFile.pending = false;
+  //   this.selectedFile.status = 'ok';
+  // }
+  // private onError() {
+  //   this.selectedFile.pending = false;
+  //   this.selectedFile.status = 'fail';
+  //   this.selectedFile.src = '';
+  // }
+  // processFile(imageInput: any) {
+  //   const file: File = imageInput.files[0];
+  //   console.log('upload image: ', file);
 
-    const reader = new FileReader();
-    console.log('upload look: ', reader);
+  //   const reader = new FileReader();
+  //   console.log('upload look: ', reader);
 
-    reader.addEventListener('load', (event: any) => {
-      this.selectedFile = new ImageSnippet(event.target.result, file);
-      console.log('image: ', this.selectedFile);
+  //   reader.addEventListener('load', (event: any) => {
+  //     this.selectedFile = new ImageSnippet(event.target.result, file);
+  //     console.log('image: ', this.selectedFile);
 
-      this.selectedFile.pending = true;
-      this.http.uploadImage(this.selectedFile.file).subscribe(
-        (res) => {
-          this.onSuccess();
-          console.log('success: ', res);
-        },
-        (err) => {
-          this.onError();
-          console.log('error: ', err);
-        });
-    });
-    reader.readAsDataURL(file);
-  }
+  //     this.selectedFile.pending = true;
+  //     this.http.uploadImage(this.selectedFile.file).subscribe(
+  //       (res) => {
+  //         this.onSuccess();
+  //         console.log('success: ', res);
+  //       },
+  //       (err) => {
+  //         this.onError();
+  //         console.log('error: ', err);
+  //       });
+  //   });
+  //   reader.readAsDataURL(file);
+  // }
 
   // upload image//
   // upload image 2
-  // onFileSelected(event) {
-  //   this.selectedFile  =  <File>event.target.files[0];
-  // }
-  // onUpload() {
-  //   const fd = new FormData();
-  //   fd.append('image', this.selectedFile, this.selectedFile.name);
-  //   this.https.post('userinfo/image', fd, {
-  //     reportProgress: true,
-  //     observe: 'events'
-  //   })
-  //   .subscribe(event => {
-  //     if (event.type === HttpEventType.UploadProgress) {
-  //       console.log('upload progress: ' + Math.round(event.loaded / event.total * 100) + '%');
-  //     } else if (event.type === HttpEventType.Response) {
-  //       console.log(event);
-  //     }
+  fileSelect(e) {
+    this.selectedFile = e.target.files[0].name;
+    console.log('image: ', e);
+  }
 
-  //   });
-  // }
-// upload image 2
+  onFileSelected(event) {
+    this.selectedFile = <File>event.target.files[0];
+  }
+  async  onUpload() {
+    const fd = await new FormData();
+    fd.append('image', this.selectedFile, this.selectedFile.name);
+    this.https.post('userinfo/image_url', fd, {
+      reportProgress: true,
+      observe: 'events'
+    })
+      .subscribe(event => {
+        if (event.type === HttpEventType.UploadProgress) {
+          console.log('upload progress: ' + Math.round(event.loaded / event.total * 100) + '%');
+        } else if (event.type === HttpEventType.Response) {
+          console.log(event);
+        }
+
+      });
+  }
+  // upload image 2
   async ngOnInit() {
     await this.refresh();
+
   }
   async refresh() {
     this.profiles = await this.getProfiles('userinfo');
@@ -115,7 +121,7 @@ export class EditProfileComponent implements OnInit {
 
   async createUserinfo() {
     const userinfo = {
-      image: null,
+      image_url: null,
       first_name: null,
       last_name: null,
       city: null,

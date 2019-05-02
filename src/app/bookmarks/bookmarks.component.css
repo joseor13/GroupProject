@@ -87,7 +87,7 @@ p {
     font-weight: bold;
     transition-duration: 0.7s;
 }
-.left-nav>li>a:hover {
+.left-nav>li:hover {
     display: block;
     background-color: darkred;
     color: white;    

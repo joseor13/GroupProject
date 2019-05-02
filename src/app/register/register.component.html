@@ -1,9 +1,9 @@
 <body class="main-container">
   <div class="r1">
     <img src="./assets/img/lg-login-header.gif">
-    <!-- <button routerLink="login(userinfo)" type="submit" class="btn-login">Login</button>
-    <input [(ngModel)]="userinfo.password" type="password" class="log-input-p" placeholder="Password">
-    <input [(ngModel)]="userinfo.email" type="text" class="log-input-e" placeholder="email"> -->
+    <button routerLink="login(userinfo)" type="submit" class="btn-login">Login</button>
+    <input [(ngModel)]="user.password" type="password" class="log-input-p" placeholder="Password">
+    <input [(ngModel)]="user.email" type="text" class="log-input-e" placeholder="email">
 
   </div>
   <div class="r2">
@@ -18,13 +18,6 @@
               <input [(ngModel)]="user.username" type="text" placeholder="Username" class="form-control"
                 name="Username" required>
             </div>
-
-            <!-- <div class="form-group">
-              <label for="last_name" vi><b>Last Name</b></label>
-              <input [(ngModel)]="userinfo.last_name" type="text" placeholder="lastName" class="form-control"
-                name="lastName" required>
-
-            </div> -->
             <div class="form-group">
               <label for="email"><b>Email</b></label>
               <input [(ngModel)]="user.email" type="text" placeholder="email" class="form-control" name="email"
@@ -38,7 +31,7 @@
 
             </div>
               <div class="form-group">
-                <button class="btn btn-primary" (click)="createUser()">Register</button>
+                <button class="btn btn-primary" (click)="createUser(user)">Register</button>
                 <a routerLink="/login" class="btn btn-link">Cancel</a>
               </div>
     </form>
@@ -47,6 +40,6 @@
     </div>
   </div>
   <div class="r3">
-    Google Killer
+      Created by Team Google Killer. Copyright @2019.
   </div>
 </body>

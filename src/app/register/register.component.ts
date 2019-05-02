@@ -16,7 +16,7 @@ export interface IUser {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  user: IUser = { email: null, password: null, username: null};
+  user: IUser = { email: null, password: null, username: null };
   currentUser = {};
   loggedIn = false;
   profiles = [];
@@ -31,33 +31,42 @@ export class RegisterComponent implements OnInit {
     await this.refresh();
   }
   async refresh() {
-      this.profiles = await this.createUser();
+    // this.profiles = await this.getProfiles(userInfo);
 
-      const token = localStorage.getItem('id_token');
-      console.log('from login ngonInit token: ', token);
-      if (token != null) {
-        this.loggedIn = true;
-        this.router.navigate(['profile']);
-      } else {
-        this.loggedIn = false;
-      }
-    }
+    // const token = localStorage.getItem('id_token');
+    // console.log('from login ngonInit token: ', token);
+    // if (token != null) {
+    //   this.loggedIn = true;
+    //   this.router.navigate(['profile']);
+    // } else {
+    //   this.loggedIn = false;
+    // }
+  }
 
-    async createUser() {
-      const user = {
-        email: null,
-         username: null,
-         password: null
+  async createUser(user) {
+    console.log('user ', user);
+
+    const newUser = {
+      email: user.email,
+      username: user.username,
+      password: user.password,
+      hash: 'xyc'
+    };
+    const resp = await this.http.post('user', user);
+    console.log('from createUser resp: ', resp);
+    if (resp) {
+      // this.profiles.unshift(resp);
+      const payload = {
+        user_id: resp.id,
+        role_type_id: 1
       };
-      const resp = await this.http.post('user', user);
-      console.log('from createUser resp: ', resp);
-      if (resp) {
-        this.profiles.unshift(resp);
-      } else {
-        this.toastService.showToast('danger', 3000, 'userinfo create failed');
-      }
-      return resp;
+      const role = await this.http.post('userRole', payload);
+      console.log('userrole ', role);
+    } else {
+      this.toastService.showToast('danger', 3000, 'userinfo create failed');
     }
+    return resp;
+  }
 
   //   await this.refresh();
   // }
