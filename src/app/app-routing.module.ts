@@ -41,16 +41,74 @@ const routes: Routes = [
     component: ProfileComponent
   }, {
     path: 'database',
-    component: DatabaseComponent
+    component: DatabaseComponent,
+    children: [
+      {
+        path: 'db2-cert',
+        component: Db2CertComponent
+      },
+      {
+        path: 'oca-cert',
+        component: OcaCertComponent
+      },
+      {
+        path: 'ocp-cert',
+        component: OcpCertComponent
+      }
+
+    ]
   }, {
     path: 'web-development',
-    component: WebDevelopmentComponent
+    component: WebDevelopmentComponent,
+    children: [
+        {
+          path: 'ace-cert',
+          component: AceCertComponent
+        },
+        {
+          path: 'aws-cert',
+          component: AwsCertComponent
+        },
+        {
+          path: 'ciw-cert',
+          component: CiwCertComponent
+        }
+    ]
   }, {
     path: 'network',
-    component: NetworkComponent
+    component: NetworkComponent,
+    children: [
+      {
+        path: 'ccna-cert',
+        component: CcnaCertComponent
+      },
+      {
+        path: 'comp-tia-network',
+        component: CompTiaNetworkComponent
+      },
+      {
+        path: 'comp-tia-linux',
+        component: CompTiaLinuxComponent
+      }
+    ]
   }, {
     path: 'cybersecurity',
-    component: CybersecurityComponent
+    component: CybersecurityComponent,
+    children: [
+      {
+        path: 'comp-tiaa-cert',
+        component: CompTiaaCertComponent
+
+      },
+      {
+        path: 'mcsa-cert',
+        component: McsaCertComponent
+      },
+      {
+        path: 'mta-cert',
+        component: MtaCertComponent
+      }
+    ]
   }, {
     path: 'bookmarks',
     component: BookmarksComponent

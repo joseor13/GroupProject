@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { HttpService } from 'src/shared-service/http.service';
 
 @Component({
   selector: 'app-comp-tiaa-cert',
@@ -9,13 +11,11 @@ import { Router } from '@angular/router';
 export class CompTiaaCertComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private http: HttpService
   ) { }
 
-  ngOnInit() {
-  }
-  navigateTo(path: string) {
-  this.router.navigate([path]);
-  }
+  ngOnInit() { }
 
 }
