@@ -218,3 +218,13 @@ p {
 .example-card {
     background-color: rgb(236, 227, 245);
 }
+.int-first  {
+    display: block;
+    width: 200px;
+    background-color: transparent;
+    font-size: 22px;
+    color: rgb(121, 17, 17);
+    border: white;
+    font-weight: bolder;
+    margin-left: 15px;
+   }

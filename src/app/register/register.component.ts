@@ -55,7 +55,6 @@ export class RegisterComponent implements OnInit {
     const resp = await this.http.post('user', user);
     console.log('from createUser resp: ', resp);
     if (resp) {
-      // this.profiles.unshift(resp);
       const payload = {
         user_id: resp.id,
         role_type_id: 1
@@ -68,16 +67,7 @@ export class RegisterComponent implements OnInit {
     return resp;
   }
 
-  //   await this.refresh();
-  // }
-  // async refresh() {
-  //   this.profiles = await this.getProfiles('user');
-  // }
-  async getProfiles(path: string) {
-    const resp = await this.http.get(path);
-    console.log('resp from getProfiles()', resp);
-    return resp;
-  }
+ 
   async login(user: IUser) {
     const resp: any = await this.http.post('user/login', user);
     if (resp && resp.token) {

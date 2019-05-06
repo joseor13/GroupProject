@@ -15,44 +15,44 @@
         </div>
 
         <div class="r2c2">
-            <mat-card class="example-card" *ngFor="let userinfo of profiles; let i = index">
+            <mat-card class="example-card" *ngIf="profile">
                 <mat-card-content>
                     <div>
-                        <img class="prof-pic" [src]="userinfo.image_url" alt="profile" id="image">
+                        <input class="int-first" [(ngModel)]="profile.first_name" disabled type="text">
+                        <input class="int-first" [(ngModel)]="profile.last_name" disabled type="text">
+                        <img class="prof-pic" [src]="profile.image_url" alt="profile" id="image">
                         <div class="form-group1 col-md-6">
                             <label for="inputCity"><b>Current City</b></label>
-                            <input [(ngModel)]="userinfo.city" disabled type="text" class="form-control" id="City">
+                            <input [(ngModel)]="profile.city" disabled type="text" class="form-control" id="city">
                         </div>
                         <div class="form-group2 col-md-6">
                             <label for="inputWork"><b>Current Job</b></label>
-                            <input [(ngModel)]="userinfo.job" disabled type="text" class="form-control" id="Work">
+                            <input [(ngModel)]="profile.job" disabled type="text" class="form-control" id="Work">
                         </div>
-                        <input [(ngModel)]="userinfo.first_name" disabled type="text" class="form-control">
-                        <input [(ngModel)]="userinfo.last_name" disabled type="text" class="form-control">
                     </div>
                     <div>
                         <label class="Info" for="exampleFormControlTextarea1"><b>Experience</b></label>
-                        <textarea [(ngModel)]="userinfo.experience" disabled class="form-control"
+                        <textarea [(ngModel)]="profile.experience" disabled class="form-control"
                             id="exampleFormControlTextarea1" rows="6"></textarea>
                     </div>
                     <div>
                         <label class="Info" for="exampleFormControlTextarea1"><b>Education</b></label>
-                        <textarea [(ngModel)]="userinfo.education" disabled class="form-control"
+                        <textarea [(ngModel)]="profile.education" disabled class="form-control"
                             id="exampleFormControlTextarea1" rows="6"></textarea>
                     </div>
                     <div>
                         <label class="Info" for="exampleFormControlTextarea1"><b>Certifications</b></label>
-                        <textarea [(ngModel)]="userinfo.certifications" disabled class="form-control"
+                        <textarea [(ngModel)]="profile.certifications" disabled class="form-control"
                             id="exampleFormControlTextarea1" rows="6"></textarea>
                     </div>
                     <div>
                         <label class="Info" for="exampleFormControlTextarea1"><b>Industry</b></label>
-                        <textarea [(ngModel)]="userinfo.industry" disabled class="form-control"
+                        <textarea [(ngModel)]="profile.industry" disabled class="form-control"
                             id="exampleFormControlTextarea1" rows="6"></textarea>
                     </div>
                     <div>
                         <label class="Info" for="exampleFormControlTextarea1"><b>Interests</b></label>
-                        <textarea [(ngModel)]="userinfo.interests" disabled class="form-control"
+                        <textarea [(ngModel)]="profile.interests" disabled class="form-control"
                             id="exampleFormControlTextarea1" rows="6"></textarea>
                     </div>
                 </mat-card-content>
@@ -61,7 +61,7 @@
         </div>
         <div class="r2c3">
             <div ngbDropdown class="dropdown">
-                <img ngbDropdownToggle type="button" class="dropbtn" src="./assets/img/lg-itcert.gif"  alt="User Photo">
+                <img ngbDropdownToggle type="button" class="dropbtn" src="./assets/img/lg-itcert.gif" alt="User Photo">
                 <div ngbDropdownMenu id="myDropdown" class="dropdown-content">
                     <a routerLink="/profile">View Profile</a>
                     <a routerLink="/edit-profile">Edit Profile</a>
@@ -72,6 +72,6 @@
         </div>
     </div>
     <div class="r3">
-            Created by Team Google Killer. Copyright @2019.
+        Created by Team Google Killer. Copyright @2019.
     </div>
 </body>

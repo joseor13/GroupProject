@@ -14,11 +14,15 @@
     </div>
 
     <div class="r2c2">
-      <mat-card class="example-card" *ngFor="let userinfo of profiles; let i = index">
+      <!-- <ng-container *ngIf="profile"> -->
+      <mat-card class="example-card">
         <mat-card-content>
-          
+          <input class="int-first" [(ngModel)]="profile.first_name" type="text">
+          <input class="int-first" [(ngModel)]="profile.last_name" type="text">
+          <img class="prof-pic" id="image" [src]="profile.image_url" alt="profile">
+          <div class="top-c2">
             <!--Method one to upload-->
-            <!-- <div *ngIf="selectedFile" class="img-preview-container">
+            <div *ngIf="selectedFile" class="img-preview-container">
               <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
                 (ngStyle)="{'background-image': 'url('+ selectedFile.src + ')'}">
               </div>
@@ -31,68 +35,54 @@
             </div>
             <label class="image-upload-container btn-bwm">
               <span>Select Image</span>
-              <input #imageInput 
-              type="file" a
-              accept="image/*" 
-              (change)="processFile(imageInput)">
-            </label> -->
+              <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)">
+            </label>
             <!-- Method one to upload-->
-            <div>
-            <img class="prof-pic" id="image_" [src]="userinfo.image_url" alt="profile">
-            <div class="top-c2">
-              <!-- <input style="display: block" type="file" (change)="onFileSelected($event)" #fileInput>
-              <button type="button" (click)="fileInput.click()">Pick File</button> --> -->
-
-              <label for="image" color="primary">Select your profile picture</label>
-              <input [(ngModel)]="userinfo.image_url" type="file" class="form-control-file" placeholder="image"
-                (change)="onFileSelected($event)">
-              <button class="btn-upload" type="button" (click)="onUpload()">Upload</button>
-
+            <div class="form-group1 col-md-6">
+              <label class="lbl-sect" for="inputCity"><b>City</b></label>
+              <input [(ngModel)]="profile.city" type="text" class="form-control" id="inputCity">
             </div>
             <div class="form-group2 col-md-6">
               <label class="lbl-sect" for="inputWork"><b>Job</b></label>
-              <input [(ngModel)]="userinfo.job" type="text" class="form-control" id="inputWork">
-            </div>
-            <div class="form-group1 col-md-6">
-              <label class="lbl-sect" for="inputCity"><b>City</b></label>
-              <input [(ngModel)]="userinfo.city" type="text" class="form-control" id="inputCity">
+              <input [(ngModel)]="profile.job" type="text" class="form-control" id="inputWork">
             </div>
           </div>
           <div>
-            <!-- <input [(ngModel)]="userinfo.image_url" type="file" name="Att_AttributeID" (change)="fileSelect($event)"
-        class="inputField" /> -->
             <label class="Info" for="exampleFormControlTextarea1">Experience</label>
-            <textarea [(ngModel)]="userinfo.experience" class="form-control" id="exampleFormControlTextarea1"
+            <textarea [(ngModel)]="profile.experience" class="form-control" id="exampleFormControlTextarea1"
               rows="6"></textarea>
           </div>
           <div>
             <label class="Info" for="exampleFormControlTextarea1">Education</label>
-            <textarea [(ngModel)]="userinfo.education" class="form-control" id="exampleFormControlTextarea1"
+            <textarea [(ngModel)]="profile.education" class="form-control" id="exampleFormControlTextarea1"
               rows="6"></textarea>
           </div>
           <div>
             <label class="Info" for="exampleFormControlTextarea1">Certifications</label>
-            <textarea [(ngModel)]="userinfo.certifications" class="form-control" id="exampleFormControlTextarea1"
+            <textarea [(ngModel)]="profile.certifications" class="form-control" id="exampleFormControlTextarea1"
               placeholder="Certifications" rows="6"></textarea>
           </div>
           <div>
             <label class="Info" for="exampleFormControlTextarea1">Industry</label>
-            <textarea [(ngModel)]="userinfo.industry" class="form-control" id="exampleFormControlTextarea1"
+            <textarea [(ngModel)]="profile.industry" class="form-control" id="exampleFormControlTextarea1"
               placeholder="Industry" rows="6"></textarea>
           </div>
           <div>
             <label class="Info" for="exampleFormControlTextarea1">Interests</label>
-            <textarea [(ngModel)]="userinfo.interests" class="form-control" id="exampleFormControlTextarea1"
+            <textarea [(ngModel)]="profile.interests" class="form-control" id="exampleFormControlTextarea1"
               placeholder="Interests" rows="6"></textarea>
           </div>
+
           <mat-card-actions>
             <div>
               <button mat-raised-button class="btn-cancel" routerLink="/profile">Cancel</button>
-              <button mat-raised-button class="btn-submit" (click)="updateUserinfo(userinfo)">Submit</button>
+              <button mat-raised-button class="btn-submit" (click)="updateUserinfo(profile)">Update</button>
             </div>
+
           </mat-card-actions>
         </mat-card-content>
       </mat-card>
+      <!-- </ng-container> -->
     </div>
     <div class="r2c3">
       <div ngbDropdown class="dropdown">

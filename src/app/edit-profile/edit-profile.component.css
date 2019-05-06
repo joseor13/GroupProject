@@ -270,3 +270,7 @@ p {
 .img-preview {
     display: none;
 }
+.int-first  {
+ display: block;
+ width: 200px;
+}

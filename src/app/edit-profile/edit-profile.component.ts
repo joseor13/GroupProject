@@ -11,19 +11,21 @@ class ImageSnippet {
   pending = false;
   status = 'init';
 
-  //   constructor(public src: string, public file: File) { }
+    constructor(public src: string, public file: File) { }
 }
 
 export interface IProfile {
   id?: number;
-  image_url: string;
-  city: string;
-  job: string;
-  experience: string;
-  education: string;
-  certifications: string;
-  industry: string;
-  interests: string;
+  image_url?: string;
+  city?: string;
+  job?: string;
+  experience?: string;
+  education?: string;
+  certifications?: string;
+  industry?: string;
+  interests?: string;
+  first_name?: string;
+  last_name?: string;
 }
 
 @Component({
@@ -32,135 +34,87 @@ export interface IProfile {
   styleUrls: ['./edit-profile.component.css']
 })
 export class EditProfileComponent implements OnInit {
-  profiles = [];
-  // selectedFile: ImageSnippet;
-  selectedFile: File = null;
+  profile: IProfile = {};
+  selectedFile: ImageSnippet;
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private toastService: ToastService,
-    private http: HttpService,
-    private https: HttpClient
+    private http: HttpService
 
   ) { }
   // upload image//
-  // private onSuccess() {
-  //   this.selectedFile.pending = false;
-  //   this.selectedFile.status = 'ok';
-  // }
-  // private onError() {
-  //   this.selectedFile.pending = false;
-  //   this.selectedFile.status = 'fail';
-  //   this.selectedFile.src = '';
-  // }
-  // processFile(imageInput: any) {
-  //   const file: File = imageInput.files[0];
-  //   console.log('upload image: ', file);
+  private onSuccess() {
+    this.selectedFile.pending = false;
+    this.selectedFile.status = 'ok';
+  }
+  private onError() {
+    this.selectedFile.pending = false;
+    this.selectedFile.status = 'fail';
+    this.selectedFile.src = '';
+  }
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    console.log('upload image: ', file);
 
-  //   const reader = new FileReader();
-  //   console.log('upload look: ', reader);
+    const reader = new FileReader();
+    console.log('upload look: ', reader);
 
-  //   reader.addEventListener('load', (event: any) => {
-  //     this.selectedFile = new ImageSnippet(event.target.result, file);
-  //     console.log('image: ', this.selectedFile);
+    reader.addEventListener('load', (event: any) => {
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+      console.log('image: ', this.selectedFile);
 
-  //     this.selectedFile.pending = true;
-  //     this.http.uploadImage(this.selectedFile.file).subscribe(
-  //       (res) => {
-  //         this.onSuccess();
-  //         console.log('success: ', res);
-  //       },
-  //       (err) => {
-  //         this.onError();
-  //         console.log('error: ', err);
-  //       });
-  //   });
-  //   reader.readAsDataURL(file);
-  // }
+      this.selectedFile.pending = true;
+      this.http.uploadImage(this.selectedFile.file).subscribe(
+        (res) => {
+          this.onSuccess();
+          console.log('success: ', res);
+        },
+        (err) => {
+          this.onError();
+          console.log('error: ', err);
+        });
+    });
+    reader.readAsDataURL(file);
+  }
 
   // upload image//
-  // upload image 2
-  fileSelect(e) {
-    this.selectedFile = e.target.files[0].name;
-    console.log('image: ', e);
-  }
-
-  onFileSelected(event) {
-    this.selectedFile = <File>event.target.files[0];
-  }
-  async  onUpload() {
-    const fd = await new FormData();
-    fd.append('image', this.selectedFile, this.selectedFile.name);
-    this.https.post('userinfo/image_url', fd, {
-      reportProgress: true,
-      observe: 'events'
-    })
-      .subscribe(event => {
-        if (event.type === HttpEventType.UploadProgress) {
-          console.log('upload progress: ' + Math.round(event.loaded / event.total * 100) + '%');
-        } else if (event.type === HttpEventType.Response) {
-          console.log(event);
-        }
-
-      });
-  }
+  // upload image 1
   // upload image 2
   async ngOnInit() {
     await this.refresh();
 
   }
   async refresh() {
-    this.profiles = await this.getProfiles('userinfo');
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log('user ', user);
+    this.profile = await this.getProfiles('userinfo/get', user.user.id);
   }
   // getProfiles('profile');
-  async getProfiles(path: string) {
-    const resp = await this.http.get(path);
-    console.log('resp from getProfiles()', resp);
-    return resp;
-  }
-
-  async createUserinfo() {
-    const userinfo = {
-      image_url: null,
-      first_name: null,
-      last_name: null,
-      city: null,
-      job: null,
-      experience: null,
-      education: null,
-      certifications: null,
-      industry: null,
-      interests: null
+  async getProfiles(path: string, userId: number) {
+    const payload = {
+      get: ['*'],
+      where: {
+        user_id: userId
+      }
     };
-    const resp = await this.http.post('userinfo', userinfo);
-    console.log('from createUserinfo resp: ', resp);
-    if (resp) {
-      this.profiles.unshift(resp);
-    } else {
-      this.toastService.showToast('danger', 3000, 'userinfo create failed');
-    }
-    return resp;
+    const resp = await this.http.post(path, payload);
+    console.log('resp from getProfiles()', resp);
+    const userInfo = resp.data[0];
+    console.log('useinfo ', userInfo);
+    return userInfo as IProfile;
   }
 
   async updateUserinfo(userinfo: any) {
     console.log('from updateUserinfo userinfo: ', userinfo);
     const resp = await this.http.put(`userinfo/id/${userinfo.id}`, userinfo);
+    console.log('update user: ', resp);
     if (resp) {
       this.toastService.showToast('success', 3000, 'userinfo updated successufully');
     }
-    return resp;
+    return userinfo as IProfile;
   }
 
-  async removeUserinfo(userinfo: any, index: number) {
-    console.log('from removeUserinfo.... ', index);
-    const resp = await this.http.delete(`userinfo/id/${userinfo.id}`);
-    console.log('resp from removeUserinfo...', resp);
-    if (resp) {
-      this.refresh();
-    } else {
-      this.toastService.showToast('danger', 3000, 'delete userinfo failed');
-    }
-  }
   async logout() {
     const resp = await this.http.logout();
     if (resp.statusCode === 200) {

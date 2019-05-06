@@ -6,14 +6,16 @@ import { HttpService } from '../../shared-service/http.service';
 
 export interface IProfile {
   id?: number;
-  image_url: string;
-  city: string;
-  job: string;
-  experience: string;
-  education: string;
-  certifications: string;
-  industry: string;
-  interests: string;
+  image_url?: string;
+  city?: string;
+  job?: string;
+  experience?: string;
+  education?: string;
+  certifications?: string;
+  industry?: string;
+  interests?: string;
+  first_name?: string;
+  last_name?: string;
 }
 @Component({
   selector: 'app-profile',
@@ -22,7 +24,7 @@ export interface IProfile {
 })
 export class ProfileComponent implements OnInit {
 
-  profiles = [];
+  profile: IProfile = {};
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -35,36 +37,23 @@ export class ProfileComponent implements OnInit {
   }
 
   async refresh() {
-    this.profiles = await this.getProfiles('userinfo');
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log('user ', user);
+    this.profile = await this.getProfile('userinfo/get', user.user.id);
   }
   // getProfiles('profile');
-  async getProfiles(path: string) {
-    const resp = await this.http.get(path);
-    console.log('resp from getProfiles()', resp);
-    return resp;
-  }
-
-  async createUserinfo() {
-    const userinfo = {
-      image_url: null,
-      first_name: null,
-      last_name: null,
-      city: null,
-      job: null,
-      experience: null,
-      education: null,
-      certifications: null,
-      industry: null,
-      interests: null
+  async getProfile(path: string, userId: number) {
+    const payload = {
+      get: ['*'],
+      where: {
+        user_id: userId
+      }
     };
-    const resp = await this.http.post('userinfo', userinfo);
-    console.log('from createUserinfo resp: ', resp);
-    if (resp) {
-      this.profiles.unshift(resp);
-    } else {
-      this.toastService.showToast('danger', 3000, 'userinfo create failed');
-    }
-    return resp;
+    const resp = await this.http.post(path, payload);
+    console.log('resp from getProfiles()', resp);
+    const userInfo = resp.data[0];
+    console.log('useinfo ', userInfo);
+    return userInfo as IProfile;
   }
 
   async updateUserinfo(userinfo: any) {
@@ -75,17 +64,7 @@ export class ProfileComponent implements OnInit {
     }
     return resp;
   }
-
-  async removeUserinfo(userinfo: any, index: number) {
-    console.log('from removeUserinfo.... ', index);
-    const resp = await this.http.delete(`userinfo/id/${userinfo.id}`);
-    console.log('resp from removeUserinfo...', resp);
-    if (resp) {
-      this.refresh();
-    } else {
-      this.toastService.showToast('danger', 3000, 'delete userinfo failed');
-    }
-  }
+  
   async logout() {
     const resp = await this.http.logout();
     if (resp.statusCode === 200) {

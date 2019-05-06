@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
     if (resp && resp.token) {
       localStorage.setItem('id_token', resp.token);
       this.toastService.showToast('success', 7000, 'Login success.');
+      localStorage.setItem('user', JSON.stringify(resp));
       this.router.navigate(['profile']);
     } else {
       this.toastService.showToast('danger', 7000, 'Login failed.');
