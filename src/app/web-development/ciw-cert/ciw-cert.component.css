@@ -1,17 +1,4 @@
-* {
-    padding: 0px;
-    margin: 0px;
-    position: relative;
-}
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-    
-
-
-}
 
 .navigation-bar>ul {
     list-style-type: none;

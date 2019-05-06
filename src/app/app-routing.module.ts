@@ -12,18 +12,18 @@ import { FourofourComponent } from './fourofour/fourofour.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { RegisterComponent } from './register/register.component';
-import { AceCertComponent } from './ace-cert/ace-cert.component';
-import { AwsCertComponent } from './aws-cert/aws-cert.component';
-import { CcnaCertComponent } from './ccna-cert/ccna-cert.component';
-import { CiwCertComponent } from './ciw-cert/ciw-cert.component';
-import { CompTiaaCertComponent } from './comp-tiaa-cert/comp-tiaa-cert.component';
-import { CompTiaLinuxComponent } from './comp-tia-linux/comp-tia-linux.component';
-import { CompTiaNetworkComponent } from './comp-tia-network/comp-tia-network.component';
-import { Db2CertComponent } from './db2-cert/db2-cert.component';
-import { McsaCertComponent } from './mcsa-cert/mcsa-cert.component';
-import { MtaCertComponent } from './mta-cert/mta-cert.component';
-import { OcaCertComponent } from './oca-cert/oca-cert.component';
-import { OcpCertComponent } from './ocp-cert/ocp-cert.component';
+import { AceCertComponent } from './web-development/ace-cert/ace-cert.component';
+import { AwsCertComponent } from './web-development/aws-cert/aws-cert.component';
+import { CcnaCertComponent } from './network/ccna-cert/ccna-cert.component';
+import { CiwCertComponent } from './web-development/ciw-cert/ciw-cert.component';
+import { CompTiaaCertComponent } from './cybersecurity/comp-tiaa-cert/comp-tiaa-cert.component';
+import { CompTiaLinuxComponent } from './cybersecurity/comp-tia-linux/comp-tia-linux.component';
+import { CompTiaNetworkComponent } from './network/comp-tia-network/comp-tia-network.component';
+import { Db2CertComponent } from './database/db2-cert/db2-cert.component';
+import { McsaCertComponent } from './network/mcsa-cert/mcsa-cert.component';
+import { MtaCertComponent } from './cybersecurity/mta-cert/mta-cert.component';
+import { OcaCertComponent } from './database/oca-cert/oca-cert.component';
+import { OcpCertComponent } from './database/ocp-cert/ocp-cert.component';
 
 
 const routes: Routes = [
@@ -41,75 +41,74 @@ const routes: Routes = [
     component: ProfileComponent
   }, {
     path: 'database',
-    component: DatabaseComponent,
-    children: [
-      {
-        path: 'db2-cert',
-        component: Db2CertComponent
-      },
-      {
-        path: 'oca-cert',
-        component: OcaCertComponent
-      },
-      {
-        path: 'ocp-cert',
-        component: OcpCertComponent
-      }
+    component: DatabaseComponent
+  },
 
-    ]
-  }, {
+  {
+    path: 'db2-cert',
+    component: Db2CertComponent
+  },
+  {
+    path: 'oca-cert',
+    component: OcaCertComponent
+  },
+  {
+    path: 'ocp-cert',
+    component: OcpCertComponent
+  },
+
+  {
     path: 'web-development',
-    component: WebDevelopmentComponent,
-    children: [
-        {
-          path: 'ace-cert',
-          component: AceCertComponent
-        },
-        {
-          path: 'aws-cert',
-          component: AwsCertComponent
-        },
-        {
-          path: 'ciw-cert',
-          component: CiwCertComponent
-        }
-    ]
-  }, {
+    component: WebDevelopmentComponent
+  },
+
+  {
+    path: 'ace-cert',
+    component: AceCertComponent
+  },
+  {
+    path: 'aws-cert',
+    component: AwsCertComponent
+  },
+  {
+    path: 'ciw-cert',
+    component: CiwCertComponent
+  },
+  {
     path: 'network',
-    component: NetworkComponent,
-    children: [
-      {
-        path: 'ccna-cert',
-        component: CcnaCertComponent
-      },
-      {
-        path: 'comp-tia-network',
-        component: CompTiaNetworkComponent
-      },
-      {
-        path: 'comp-tia-linux',
-        component: CompTiaLinuxComponent
-      }
-    ]
+    component: NetworkComponent
+  },
+
+  {
+    path: 'ccna-cert',
+    component: CcnaCertComponent
+  },
+  {
+    path: 'comp-tia-network',
+    component: CompTiaNetworkComponent
+  },
+  {
+    path: 'comp-tia-linux',
+    component: CompTiaLinuxComponent
   }, {
     path: 'cybersecurity',
-    component: CybersecurityComponent,
-    children: [
-      {
-        path: 'comp-tiaa-cert',
-        component: CompTiaaCertComponent
+    component: CybersecurityComponent
+  },
 
-      },
-      {
-        path: 'mcsa-cert',
-        component: McsaCertComponent
-      },
-      {
-        path: 'mta-cert',
-        component: MtaCertComponent
-      }
-    ]
-  }, {
+  {
+    path: 'comp-tiaa-cert',
+    component: CompTiaaCertComponent
+
+  },
+  {
+    path: 'mcsa-cert',
+    component: McsaCertComponent
+  },
+  {
+    path: 'mta-cert',
+    component: MtaCertComponent
+  },
+  {
     path: 'bookmarks',
     component: BookmarksComponent
   }, {
@@ -118,49 +117,6 @@ const routes: Routes = [
   }, {
     path: '**',
     component: FourofourComponent
-  }, {
-    path: 'ace-cert',
-    component: AceCertComponent
-  }, {
-    path: 'aws-cert',
-    component: AwsCertComponent
-  },
-  {
-    path: 'ccna-cert',
-    component: CcnaCertComponent
-  },
-  {
-    path: 'ciw-cert',
-    component: CiwCertComponent
-  },
-  {
-    path: 'comp-tia-linux',
-    component: CompTiaLinuxComponent
-  },
-  {
-    path: 'comp-tia-network',
-    component: CompTiaNetworkComponent
-  },
-  {
-    path: 'comp-tiaa-cert',
-    component: CompTiaaCertComponent
-  },
-  {
-    path: 'db2-cert',
-    component: Db2CertComponent
-  },
-  {
-    path: 'mcsa-cert',
-    component: McsaCertComponent
-  }, {
-    path: 'mta-cert',
-    component: MtaCertComponent
-  }, {
-    path: 'oca-cert',
-    component: OcaCertComponent
-  }, {
-    path: 'ocp-cert',
-    component: OcpCertComponent
   }
 
 
@@ -172,10 +128,6 @@ const routes: Routes = [
 
 
 
-
-
-
-
-];
+]
 export const AppRoutes = RouterModule.forRoot(routes);
 
