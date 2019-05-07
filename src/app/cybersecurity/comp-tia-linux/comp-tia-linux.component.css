@@ -23,7 +23,7 @@ body {
 
 .navigation-bar>ul>li {
     float: left;
-    padding: 5px 13%;
+    padding: 5px 14%;
 
 }
 
@@ -39,17 +39,39 @@ body {
 .main-body{
     background-color: #4f7065;
     display: grid;
-    grid-template-rows: .5fr .2fr .3fr .3fr .3fr .3fr .4fr;
+    grid-template-rows: 100px .2fr .3fr .3fr .3fr .3fr .4fr;
     row-gap: 5px;
 }
 .cert-desc,.cert-obtain,.cert-cost,.cert-resources{
-    padding:25px 25px 25px 25px;
+    padding:25px 15px 25px 25px;
     background-color: rgb(153, 184, 212);
     margin:0px 100px 0px 100px;
+    font-weight:bold;
     
 }
 .cert-resources>ul>li{
     padding: 5px 0px 0px 5px;
     margin-left:25px;
+
+}
+ .cert-img{ 
+    height:100px; 
+    width:100px; 
+    align-self: left;
+}
+.cert-title{
+    text-align:center;
+    display:block;
+    color:white;
+  
+
+}
+.logo{
+    height:100px;
+    display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:400px;
+
 
 }
