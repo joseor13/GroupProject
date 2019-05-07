@@ -35,6 +35,7 @@ import { McsaCertComponent } from './network/mcsa-cert/mcsa-cert.component';
 import { MtaCertComponent } from './cybersecurity/mta-cert/mta-cert.component';
 import { OcaCertComponent } from './database/oca-cert/oca-cert.component';
 import { OcpCertComponent } from './database/ocp-cert/ocp-cert.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { OcpCertComponent } from './database/ocp-cert/ocp-cert.component';
     MtaCertComponent,
     OcaCertComponent,
     OcpCertComponent,
+    HomepageComponent,
 
   ],
   imports: [
@@ -74,7 +76,6 @@ import { OcpCertComponent } from './database/ocp-cert/ocp-cert.component';
     BrowserAnimationsModule,
     MaterialDesignModule,
     SharedServiceModule,
-// tslint:disable-next-line: deprecation
     NgbModule.forRoot()
   ],
   providers: [],

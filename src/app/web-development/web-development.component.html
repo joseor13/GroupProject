@@ -6,6 +6,7 @@
     <div class="navigation-bar">
         <ul>
             <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/profile">Profile</a></li>
             <li><a routerLink="/cybersecurity">General IT</a></li>
             <li><a routerLink="/network">Networking</a></li>
             <li><a routerLink="/database">Database</a></li>
@@ -41,15 +42,15 @@
                 <tr>
                     <td>
                             <img src="./assets/img/adobe_expert.jpg" class="cert-img">
-                            <a routerLink="/ace-cert" class="ace">Adobe Certified Expert</a>
+                            <a [routerLink]="['ace-cert']" class="ace">Adobe Certified Expert</a>
                     </td>
                     <td>
                             <img src="./assets/img/CIW - Web Development Professional.jpg" class="cert-img">
-                            <a routerLink="/ciw-cert" class="ciw">Web Development Proffesional</a>
+                            <a [routerLink]="['ciw-cert']" class="ciw">Web Development Proffesional</a>
                     </td>
                     <td>
                             <img src="./assets/img/aws.png" class="cert-img">
-                            <a routerLink="/aws-cert" class="aws">AWS Certified</a>
+                            <a [routerLink]="['aws-cert']" class="aws">AWS Certified</a>
                     </td>
     
                 </tr>
