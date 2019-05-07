@@ -64,7 +64,7 @@ export class ProfileComponent implements OnInit {
     }
     return resp;
   }
-  
+
   async logout() {
     const resp = await this.http.logout();
     if (resp.statusCode === 200) {
