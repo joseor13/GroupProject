@@ -11,7 +11,7 @@ class ImageSnippet {
   pending = false;
   status = 'init';
 
-    constructor(public src: string, public file: File) { }
+  constructor(public src: string, public file: File) { }
 }
 
 export interface IProfile {
@@ -111,6 +111,17 @@ export class EditProfileComponent implements OnInit {
     console.log('update user: ', resp);
     if (resp) {
       this.toastService.showToast('success', 3000, 'userinfo updated successufully');
+    }
+    return userinfo as IProfile;
+  }
+  // register foreign key
+  async createUserinfo(userinfo) {
+    const resp = await this.http.post('userinfo', userinfo);
+    console.log('from createUserinfo resp: ', resp);
+    if (resp) {
+      this.toastService.showToast('success', 3000, 'userinfo created successufully');
+    } else {
+      this.toastService.showToast('danger', 3000, 'userinfo create failed');
     }
     return userinfo as IProfile;
   }

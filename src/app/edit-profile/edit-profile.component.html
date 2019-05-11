@@ -10,6 +10,7 @@
         <li><a routerLink="/networking">Networking</a></li>
         <li><a routerLink="/database">Database</a></li>
         <li><a routerLink="/web-development">Wed Development</a></li>
+        <li><a routerLink="/register">Register</a></li>
       </div>
     </div>
 
@@ -77,6 +78,7 @@
             <div>
               <button mat-raised-button class="btn-cancel" routerLink="/profile">Cancel</button>
               <button mat-raised-button class="btn-submit" (click)="updateUserinfo(profile)">Update</button>
+              <button mat-raised-button class="btn-submit" (click)="createUserinfo(profile)">Submit</button>
             </div>
 
           </mat-card-actions>

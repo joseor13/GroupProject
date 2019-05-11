@@ -67,7 +67,6 @@ export class RegisterComponent implements OnInit {
     return resp;
   }
 
- 
   async login(user: IUser) {
     const resp: any = await this.http.post('user/login', user);
     if (resp && resp.token) {

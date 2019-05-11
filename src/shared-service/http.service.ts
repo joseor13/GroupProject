@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpEvent, HttpErrorResponse, HttpEventType} from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpErrorResponse, HttpEventType } from '@angular/common/http';
 import { Http, Headers, Response } from '@angular/http';
 import { environment } from '../environments/environment';
 import { Observable } from 'rxjs/Observable';
@@ -19,8 +19,8 @@ export class HttpService {
         this.apiURL = environment.apiURL;
     }
 
-     uploadImage(image: File): Observable<Response> {
-        const formData =  new FormData();
+    public uploadImage(image: File): Observable<Response> {
+        const formData = new FormData();
         formData.append('image', image);
         return this.http.post('/api/v1/userinfo/image_url', formData);
     }
