@@ -66,38 +66,24 @@ p {
     margin-left: 2%;
     max-height: 100%;
 }
-.r1c1 {
-    width: 200px;
-}
-
-.r2c3,
 .r2c1 {
-    background-color: blanchedalmond;
+    width: 200px;
     align-content: center;
 }
-.left-nav {
-    list-style: none;
+
+.r2c3 {
+     background-color: #5fcfc2;
 }
 
-.left-nav>li {
-    padding: 15px 7px;
-    border: solid greenyellow 1px;
-    text-align: center;
-    background-color: #3e8e41;
+.list-group-item {
+    background-color: #004ba1;
 }
 
-.left-nav>li>a {
-    display: block;
-    color: yellow;
-    font-size: 16px;
-    font-weight: bold;
-    transition-duration: 0.7s;
+.list-group-item:hover {
+    color: #ecc487;
+    background-color: #01336b;
 }
-.left-nav>li:hover {
-    display: block;
-    background-color: darkred;
-    color: white;    
-}
+
 .r2c2 {
     grid-template-rows: 3.5fr 6fr 6fr 6fr 6fr 6fr;
     grid-row-gap: .5em;
@@ -105,7 +91,8 @@ p {
 }
 .Info {
     display: block;
-    background-color: cornflowerblue;
+    padding-left: 8px;
+    background-color: #4581c5;
     color: white;
     font-size: 20px;
 }
@@ -206,8 +193,8 @@ p {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: rgb(2, 32, 2);
-    color: white;
+    background-color: #004ba1;
+    color: #ecc487;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -221,7 +208,7 @@ p {
     font-size: 20px;
 }
 .example-card {
-    background-color: rgb(236, 227, 245);
+    background-color: #ecc487;
 }
 .int-first  {
     display: block;

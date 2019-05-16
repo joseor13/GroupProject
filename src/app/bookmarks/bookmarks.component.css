@@ -65,42 +65,30 @@ p {
     margin-left: 2%;
     max-height: 100%;
 }
-.r1c1 {
+.r2c1 {
     width: 200px;
+    align-content: center;
 }
 
-.r2c3,
-.r2c1 {
-    background-color: blanchedalmond;
-    align-content: center;
+.r2c3 {
+     background-color: #5fcfc2;
 }
 .left-nav {
     list-style: none;
 }
-
-.left-nav>li {
-    padding: 15px 7px;
-    border: solid greenyellow 1px;
-    text-align: center;
-    background-color: #3e8e41;
+.list-group-item {
+    background-color: #004ba1;
 }
 
-.left-nav>li>a {
-    display: block;
-    color: yellow;
-    font-size: 16px;
-    font-weight: bold;
-    transition-duration: 0.7s;
+.list-group-item:hover {
+    color: #ecc487;
+    background-color: #01336b;
 }
-.left-nav>li:hover {
-    display: block;
-    background-color: darkred;
-    color: white;    
-}
+
 .r2c2 {
     grid-template-rows: 3.5fr 6fr 6fr 6fr 6fr 6fr;
     grid-row-gap: .5em;
-    background-color: rgb(206, 220, 231);
+    background-color: #ecc487;
 }
 .Info {
     display: block;
@@ -215,23 +203,27 @@ p {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: rgb(2, 32, 2);
-    color: white;
+    background-color: #004ba1;
+    color: #ecc487;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
     display: block;
 }
-.add-bookmark {
-    background-color: black;
-    color: rgb(128, 240, 152);
+.btn-primary { 
     margin: 10px 0px 10px 800px;
+    background-color: #329c90;
+    border: none;
 }
-.add-bookmark:hover {
+.btn-primary:hover { 
+    background-color: #13685e;
+    border: none;
+}
+/* .add-bookmark:hover {
     background-color: coral;
     color: black;
-}
+} */ */
 .form-control {
     width: 870px;
     font-size: 15px; 

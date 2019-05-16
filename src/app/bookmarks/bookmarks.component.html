@@ -4,17 +4,22 @@
   </div>
   <div class="r2">
     <div class="r2c1">
-      <div class="left-nav">
-        <li><a routerLink="/home">Home</a></li>
+            <div class="list-group box-shadow">
+                <a routerLink="/home" class="list-group-item list-group-item-action">Home</a>
+                <a routerLink="/cybersecurity" class="list-group-item list-group-item-action">General IT</a>
+                <a routerLink="/network" class="list-group-item list-group-item-action">Networking</a>
+                <a routerLink="/database" class="list-group-item list-group-item-action">Database</a>
+                <a routerLink="/web-development" class="list-group-item list-group-item-action">Web Development</a>
+              </div>
+        <!-- <li><a routerLink="/home">Home</a></li>
         <li><a routerLink="/cybersecurity">General IT</a></li>
         <li><a routerLink="/network">Networking</a></li>
         <li><a routerLink="/database">Database</a></li>
-        <li><a routerLink="/web-development">Wed Development</a></li>
-      </div>
+        <li><a routerLink="/web-development">Wed Development</a></li> -->
     </div>
 
-    <div class="r2c2">
-        <button class="add-bookmark" (click)="createBookmark()">Add a New Bookmark</button>
+    <div class="r2c2 box-shadow">
+        <button type="button" class="btn btn-primary" (click)="createBookmark()">Add a New Bookmark</button>
       <div class="gallery-grid">
       <mat-card class="example-card" *ngFor="let bookmark of profiles; let i = index">
         <mat-card-content>
@@ -52,7 +57,7 @@
       </mat-card>
     </div>
     </div>
-    <div class="r2c3">
+    <div class="r2c3 box-shadow">
       <div ngbDropdown class="dropdown">
         <img ngbDropdownToggle type="button" class="dropbtn" src="./assets/img/lg-itcert.gif" alt="User Photo">
         <div ngbDropdownMenu id="myDropdown" class="dropdown-content">

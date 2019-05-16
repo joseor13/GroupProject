@@ -4,18 +4,18 @@
     </div>
     <div class="r2">
         <div class="r2c1">
-            <div class="left-nav">
-                <li><a routerLink="/home">Home</a></li>
-                <li><a routerLink="/cybersecurity">General IT</a></li>
-                <li><a routerLink="/network">Networking</a></li>
-                <li><a routerLink="/database">Database</a></li>
-                <li><a routerLink="/web-development">Wed Development</a></li>
-                <li><a routerLink="/register">Register</a></li>
-            </div>
+                <div class="list-group box-shadow">
+                        <a routerLink="/home" class="list-group-item list-group-item-action">Home</a>
+                        <a routerLink="/cybersecurity" class="list-group-item list-group-item-action">General IT</a>
+                        <a routerLink="/network" class="list-group-item list-group-item-action">Networking</a>
+                        <a routerLink="/database" class="list-group-item list-group-item-action">Database</a>
+                        <a routerLink="/web-development" class="list-group-item list-group-item-action">Web Development</a>
+                        <a routerLink="/register" class="list-group-item list-group-item-action">Register</a>
+                      </div>
         </div>
 
         <div class="r2c2">
-            <mat-card class="example-card" *ngIf="profile">
+            <mat-card class="example-card box-shadow" *ngIf="profile">
                 <mat-card-content>
                     <div>
                         <input class="int-first" [(ngModel)]="profile.first_name" disabled type="text">
@@ -59,7 +59,7 @@
             </mat-card>
 
         </div>
-        <div class="r2c3">
+        <div class="r2c3 box-shadow">
             <div ngbDropdown class="dropdown">
                 <img ngbDropdownToggle type="button" class="dropbtn" src="./assets/img/lg-itcert.gif" alt="User Photo">
                 <div ngbDropdownMenu id="myDropdown" class="dropdown-content">
