@@ -31,16 +31,6 @@ export class RegisterComponent implements OnInit {
     await this.refresh();
   }
   async refresh() {
-    // this.profiles = await this.getProfiles(userInfo);
-
-    // const token = localStorage.getItem('id_token');
-    // console.log('from login ngonInit token: ', token);
-    // if (token != null) {
-    //   this.loggedIn = true;
-    //   this.router.navigate(['profile']);
-    // } else {
-    //   this.loggedIn = false;
-    // }
   }
 
   async createUser(user) {
@@ -61,8 +51,8 @@ export class RegisterComponent implements OnInit {
       };
       const role = await this.http.post('userRole', payload);
       console.log('userrole ', role);
-    } else {
-      this.toastService.showToast('danger', 3000, 'userinfo create failed');
+      } else {
+        this.toastService.showToast('danger', 3000, 'userinfo create failed');
     }
     return resp;
   }

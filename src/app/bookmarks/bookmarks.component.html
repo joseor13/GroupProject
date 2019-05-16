@@ -10,6 +10,7 @@
         <li><a routerLink="/network">Networking</a></li>
         <li><a routerLink="/database">Database</a></li>
         <li><a routerLink="/web-development">Wed Development</a></li>
+        <li><a routerLink="/register">Register</a></li>
       </div>
     </div>
 
@@ -18,10 +19,6 @@
       <div class="gallery-grid">
       <mat-card class="example-card" *ngFor="let bookmark of profiles; let i = index">
         <mat-card-content>
-          <!-- <div class="b-content">
-            <label class="Info" for="id">ID</label>
-            <input [(ngModel)]="bookmark.id" disabled class="form-control" type="text" id="id" placeholder="ID" rows="1">
-          </div> -->
           <div>
             <label class="Info" for="boormark_name">Bookmark Name</label>
             <input [(ngModel)]="bookmark.bookmark_name" class="form-control" type="text" id="boormark_name"
@@ -32,16 +29,6 @@
             <input [(ngModel)]="bookmark.bookmark_date" class="form-control" type="text" id="bookmark_date"
               placeholder="Bookmark_date" rows="6">
           </div>
-          <!-- <div>
-            <label class="Info" for="certification_id">Certification ID</label>
-            <input [(ngModel)]="bookmark.certification_id" class="form-control" type="text" id="certification_id"
-              placeholder="Certification_id" rows="6">
-          </div>
-          <div>
-            <label class="Info" for="userinfo_id">User Information ID</label>
-            <input [(ngModel)]="bookmark.userinfo_id" class="form-control" type="text" id="userinfo_id"
-              placeholder="Userinfo_id" rows="6">
-          </div> -->
         </mat-card-content>
         <mat-card-actions>
           <div>

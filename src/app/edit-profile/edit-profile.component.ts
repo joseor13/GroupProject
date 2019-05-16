@@ -6,6 +6,7 @@ import { HttpService } from '../../shared-service/http.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient, HttpEventType } from '@angular/common/http';
+import { RegisterComponent } from '../register/register.component';
 
 class ImageSnippet {
   pending = false;
@@ -115,7 +116,13 @@ export class EditProfileComponent implements OnInit {
     return userinfo as IProfile;
   }
   // register foreign key
-  async createUserinfo(userinfo) {
+  async createUserinfo(userinfo: any, userID: number) {
+    const newUser = {
+      first_name: userinfo.first_name,
+      last_name: userinfo.last_name,
+      city: userinfo.city,
+      userID: userinfo.user_id
+    };
     const resp = await this.http.post('userinfo', userinfo);
     console.log('from createUserinfo resp: ', resp);
     if (resp) {

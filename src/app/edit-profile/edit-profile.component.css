@@ -66,7 +66,7 @@ p {
 
 .r2c3,
 .r2c1 {
-    background-color: blanchedalmond;
+    background-color: rgb(241, 239, 235);
     align-content: center;
 }
 .left-nav {
@@ -75,22 +75,22 @@ p {
 
 .left-nav>li {
     padding: 15px 7px;
-    border: solid greenyellow 1px;
+    border: solid rgb(75, 245, 132) 1px;
     text-align: center;
-    background-color: #3e8e41;
+    background-color: #1e0a77;
 }
 
 .left-nav>li>a {
     display: block;
-    color: yellow;
+    color: rgb(253, 253, 251);
     font-size: 16px;
     font-weight: bold;
     transition-duration: 0.7s;
 }
 .left-nav>li:hover {
     display: block;
-    background-color: darkred;
-    color: white;    
+    background-color: rgb(59, 58, 58);
+    color: rgb(250, 249, 249);      
 }
 .r2c2 {
     grid-template-rows: 3.5fr 3fr 3fr 3fr 3fr 3fr ;
@@ -103,11 +103,11 @@ p {
 }
 .Info {
     display: block;
-    color: rgb(25, 3, 85);
+    color: rgb(15, 14, 14);
     font-size: 25px;
     font-weight: bold;
     margin-left: 10px;
-    background-color: lightskyblue;
+    background-color: rgb(158, 147, 125);
 }
 /* .prof-pic  */
 .img-preview-container{
@@ -124,7 +124,7 @@ p {
     width: 100vw;
     margin-top: 20px;
     height: 50px;
-    background-color: rgb(83, 8, 8);
+    background-color: rgb(17, 12, 12);
     align-items: center;
     color: white;
 
@@ -151,7 +151,7 @@ p {
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: rgb(5, 36, 56);
+    background-color: rgb(68, 88, 102);
     color: white;
     padding: 10px;
     margin: 22px 15px 0px 30px;
@@ -165,7 +165,7 @@ p {
 /* Dropdown button on hover & focus */
 .dropbtn:hover,
 .dropbtn:focus {
-    background-color: lightyellow;
+    background-color: #1e0a77;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -178,7 +178,7 @@ p {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #1e0a77;
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -188,7 +188,7 @@ p {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    color: black;
+    color: rgb(252, 249, 249);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -198,6 +198,7 @@ p {
 .dropdown-content a:hover {
     background-color: rgb(2, 32, 2);
     color: white;
+    border: solid rgb(75, 245, 132) 1px;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -230,6 +231,16 @@ p {
 .btn-submit:hover {
     background-color: lime;
 }
+.btn-update {
+    float: right;
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 40px;
+    margin-right: 25px;
+    margin-top: 50px;
+    font-weight: bold;
+}
 .form-group1 {
     display: block;
     float: right;
@@ -258,7 +269,7 @@ p {
     width: 80px;
 }
 .lbl-sect {
-    background-color: rgb(149, 202, 235);
+    background-color: rgb(158, 147, 125);
 }
 .image-upload-container {
     cursor: pointer;
