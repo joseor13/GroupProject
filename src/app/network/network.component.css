@@ -1,4 +1,9 @@
 *
+.box-shadow {
+    -webkit-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
+}
 .header-logo>img {
     height: 100px;
     width: 100%;
@@ -87,13 +92,17 @@
     padding-bottom:30px;
     padding-left:15px;
 }
-.footer-text > p{
-    text-align:center;
-    font-size:20px;
-    padding-top:8px;
-    background-color: rgb(83, 8, 8);
-    color:white;
-    height: 100%;
+.footer-text {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    width: 100vw;
+    margin-top: 20px;
+    height: 50px;
+    background-color: #004ba1;
+    align-items: center;
+    color: white;
+    font-size: 20px;
 }
 .gallery-table>tbody>tr {
     text-align: center;

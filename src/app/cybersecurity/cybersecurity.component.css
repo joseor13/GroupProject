@@ -1,4 +1,9 @@
 *
+.box-shadow {
+    -webkit-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
+}
 a {
     text-decoration: none;
     color: white;
@@ -92,14 +97,21 @@ a {
     padding-bottom:30px;
     padding-left:15px;
 }
-.footer-text > p{
-    text-align:center;
+
+.footer-text {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    width: 100vw;
+    margin-top: 20px;
+    height: 50px;
+    background-color: #004ba1;
+    align-items: center;
+    color: white;
     font-size:20px;
-    padding-top:8px;
-    background-color: rgb(83, 8, 8);
-    color:white;
-    height: 100%;
 }
+
+
 .gallery-table>tbody>tr {
     text-align: center;
     height: 100px;
